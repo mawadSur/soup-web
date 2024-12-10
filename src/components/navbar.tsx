@@ -24,10 +24,11 @@ export default function Navbar() {
   });
 
   return (
-    <nav ref={navRef} className="fixed top-0 left-0 w-full bg-black text-white z-50">
+    <nav ref={navRef} className="w-full bg-black text-white z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/" className="text-xl font-bold flex items-center gap-4">
           <Image src="/gazasoup-logo.webp" alt="Logo" width={50} height={50} />
+          <p>GAZASOUPKITCHEN</p>
         </Link>
 
         <button
@@ -78,8 +79,8 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "block py-2 lg:py-0 transition-colors duration-300",
-                    item.href === pathName ? "text-primary" : "hover:text-white text-white-hover"
+                    "block py-2 lg:py-0 transition-colors duration-300 font-medium",
+                    item.href === pathName ? "text-red-500" : "hover:text-white-hover text-white"
                   )}
                 >
                   {item.label}
