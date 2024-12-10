@@ -34,16 +34,21 @@ export default function Navbar() {
           onClick={toggleMenu}
           className="lg:hidden flex items-center gap-2"
           aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
         >
           <span className="text-xl text-white"><FaBars /></span>
           MENU
         </button>
 
         <div
+          id="primary-navigation"
+          role="navigation"
+          aria-hidden={!isMenuOpen}
           className={cn(
             "lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto",
             "w-full lg:w-auto bg-black lg:bg-transparent",
-            "transition-all duration-700 ease-in-out overflow-hidden",
+            "transition-all duration-300 ease-in-out overflow-hidden",
             "lg:opacity-100",
             isMenuOpen
               ? "max-h-screen opacity-100"
