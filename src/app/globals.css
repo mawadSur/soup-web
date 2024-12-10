@@ -3,19 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #f86f2d;
+  --secondary: #fa8f3d;
+  --white-hover:#ffffffcc;
+  --font-primary: 'Overpass', Arial, sans-serif;
+  --font-secondary: 'Dosis', Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow-x: hidden;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  background-color: var(--white);
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5); /* lighten(--black, 50%) equivalent */
+}
+
+body.menu-show {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+span {
+  color: rgba(0, 0, 0, 0.25); /* lighten(--black, 75%) equivalent */
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  line-height: 1.4;
+  color: var(--black);
+  font-family: var(--font-secondary);
+  font-weight: 400;
 }
