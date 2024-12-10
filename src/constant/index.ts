@@ -1,4 +1,4 @@
-export const menuItems = [
+export const NAVIGATIONS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Causes', href: '/causes' },

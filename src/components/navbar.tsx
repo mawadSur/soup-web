@@ -1,5 +1,5 @@
 "use client"
-import { menuItems } from '@/constant';
+import { NAVIGATIONS } from '@/constant';
 import { useOutsideClick } from '@/hooks/useOutside';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -57,7 +57,7 @@ export default function Navbar() {
               "transition-all duration-300 ease-in-out"
             )}
           >
-            {menuItems.map((item) => (
+            {NAVIGATIONS.map((item) => (
               <li
                 key={item.href}
                 className={cn(
@@ -67,7 +67,7 @@ export default function Navbar() {
                     : '-translate-x-5'
                 )}
                 style={{
-                  transitionDelay: isMenuOpen ? `${menuItems.indexOf(item) * 50}ms` : '0ms',
+                  transitionDelay: isMenuOpen ? `${NAVIGATIONS.indexOf(item) * 50}ms` : '0ms',
                 }}
               >
                 <Link
