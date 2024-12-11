@@ -5,21 +5,20 @@ import { TypingAnimation } from './typing-animation'
 
 export default function Hero() {
   return (
-    <div>
-      <h1 className="text-7xl font-bold text-center text-black pt-8 sm:pt-10 lg:pt-16">GAZA SOUP KITCHEN</h1>
-      <div className="py-10 sm:py-10 lg:py-16">
+    <section>
+      <div className="py-10 sm:py-10 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold text-black sm:text-4xl">
+              <h2 className="font-bold text-black text-xl sm:text-2xl md:text-3xl">
                 In a world abundant in resources,
                 <div className="relative inline-flex">
-                  <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80]"></span>
-                  <h2 className="relative text-6xl font-bold text-black lg:text-7xl">no child should</h2>
+                  <span className="absolute inset-x-0 bottom-0 border-b-[15px] border-[#4ADE80]"></span>
+                  <h2 className="relative font-bold text-black text-3xl md:text-5xl lg:text-6xl xl:text-6xl">no child should</h2>
                 </div>
                 <div className="relative inline-flex">
-                  <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80]"></span>
-                  <h2 className="relative text-6xl font-bold text-black lg:text-7xl">ever go to bed hungry.</h2>
+                  <span className="absolute inset-x-0 bottom-0 border-b-[15px] border-[#4ADE80]"></span>
+                  <h2 className="relative font-bold text-black text-3xl md:text-5xl lg:text-6xl xl:text-6xl">ever go to bed hungry.</h2>
                 </div>
               </h2>
 
@@ -36,13 +35,19 @@ export default function Hero() {
                 </Button>
               </div>
             </div>
-
-            <div >
-              <Image width={800} height={800} src="/gaza-kids.webp" alt="gaza-kids" className='rounded-xl' />
-            </div>
+            <Image
+              src="/gaza-kid.webp"
+              alt="Palestinian kid in Gaza: Humanitarian Crisis"
+              width={800}
+              height={800}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className='rounded-xl w-full h-auto object-cover'
+              loading="eager"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -1,5 +1,7 @@
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { FaBluesky, FaSquareFacebook } from "react-icons/fa6";
+import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from "react-icons/lia";
+import { PiHandHeart } from "react-icons/pi";
 
 export const NAVIGATIONS = [
   { label: 'Home', href: '/' },
@@ -19,7 +21,7 @@ export const SOCIALS = [
     icon: FaSquareFacebook,
   },
   {
-    name: 'GitHub',
+    name: 'Instagram',
     href: 'https://www.instagram.com/gazasoupkitchen/',
     icon: FaInstagramSquare,
   },
@@ -34,3 +36,21 @@ export const SOCIALS = [
     icon: FaBluesky,
   },
 ]
+
+export const INVOLVED_ITEMS = [
+  {
+    title: "Make Donation",
+    description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
+    icon: PiHandHeart
+  },
+  {
+    title: "Become A Volunteer",
+    description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
+    icon: LiaHandshakeSolid
+  },
+  {
+    title: "Sponsorship",
+    description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
+    icon: LiaHandHoldingUsdSolid
+  }
+];

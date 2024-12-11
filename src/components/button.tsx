@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import React, { ElementType, ComponentProps, PropsWithChildren } from 'react';
+import React from 'react';
 
-export type ButtonProps<AS extends ElementType> =
-  PropsWithChildren<{
+export type ButtonProps<AS extends React.ElementType = 'button'> =
+  React.PropsWithChildren<{
     as?: AS;
     href?: string;
   }> &
-  Omit<ComponentProps<AS>, 'as'>;
+  Omit<React.ComponentProps<AS>, 'as'>;
 
-export const Button = <AS extends ElementType = 'button'>(
+export const Button = <AS extends React.ElementType = 'button'>(
   props: ButtonProps<AS>
 ) => {
   const {

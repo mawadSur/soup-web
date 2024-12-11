@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #f86f2d;
-  --secondary: #fa8f3d;
+  --color-1: #f86f2d;
+  --color-2: #fa8f3d;
+  --color-3:#faaa3a;
   --white-hover:#ffffffcc;
   --font-primary: 'Overpass', Arial, sans-serif;
   --font-secondary: 'Dosis', Arial, sans-serif;
