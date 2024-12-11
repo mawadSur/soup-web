@@ -1,7 +1,10 @@
-import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { FaBluesky, FaSquareFacebook } from "react-icons/fa6";
 import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from "react-icons/lia";
 import { PiHandHeart } from "react-icons/pi";
+
+export const DONATION_URL = 'https://givebutter.com/gaza-soup-kitchen';
+export const CHILDRENSERVED = 1432805;
 
 export const NAVIGATIONS = [
   { label: 'Home', href: '/' },

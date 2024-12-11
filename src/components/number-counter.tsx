@@ -69,12 +69,13 @@ export default function Counter({
   }, [isInView, delay, isGoingUp, targetValue, motionValue]);
 
   React.useEffect(() => {
-    springValue.on('change', (value) => {
+    const unsubscribe = springValue.on('change', (value) => {
       if (ref.current) {
         ref.current.textContent = format ? format(value) : String(value);
       }
     });
+    return () => unsubscribe();
   }, [springValue, format]);
 
-  return <span ref={ref} className={cn('text-6xl font-light text-black', className)} />;
+  return <span ref={ref} className={cn('text-6xl font-light text-black', className)} aria-live="polite" role="status" />;
 }

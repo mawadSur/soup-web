@@ -1,72 +1,67 @@
-"use client"
-import Image from 'next/image'
-import { Button } from './button'
-import Counter from './number-counter'
+'use client';
+import Image from 'next/image';
+import { Button } from './button';
+import Counter from './number-counter';
+import { CHILDRENSERVED, DONATION_URL } from '@/constant';
 
 const TOP_HERO_BOXES = [
   {
-    textStyle: "text-6xl",
-    bgColor: "bg-color1",
-    title: "Served Over",
-    body: <Counter targetValue={1432805} />,
+    textStyle: 'text-6xl',
+    bgColor: 'bg-color1',
+    title: 'Served Over',
+    body: <Counter targetValue={CHILDRENSERVED} />,
     footer: <p className="font-light text-base lg:text-2xl">Children in 190 countries in the world</p>,
-    width: "w-full md:w-1/2",
+    width: 'w-full md:w-1/2',
   },
   {
-    textStyle: "text-base md:text-sm",
-    bgColor: "bg-color2",
-    title: "Donation",
-    body: "Even the all-powerful Pointing has no control about the blind texts.",
+    textStyle: 'text-base md:text-sm',
+    bgColor: 'bg-color2',
+    title: 'Donation',
+    body: 'Your donation provides essential meals to children in need.',
     footer: (
       <Button
         as="a"
         target="_blank"
-        href="https://givebutter.com/gaza-soup-kitchen"
+        href={DONATION_URL}
         className="bg-white text-black border border-solid border-white px-3 py-2 shadow-lg rounded font-semibold md:text-xs lg:text-sm"
       >
         BUY A HOT MEAL
       </Button>
     ),
-    width: "w-full md:w-1/4",
+    width: 'w-full md:w-1/4',
   },
   {
-    textStyle: "text-base md:text-sm",
-    bgColor: "bg-color3",
-    title: "Be a Volunteer",
-    body: "Even the all-powerful Pointing has no control about the blind texts.",
+    textStyle: 'text-base md:text-sm',
+    bgColor: 'bg-color3',
+    title: 'Be a Volunteer',
+    body: 'Even the all-powerful Pointing has no control about the blind texts.',
     footer: (
       <Button
         as="a"
         target="_blank"
-        href="https://givebutter.com/gaza-soup-kitchen"
+        href={DONATION_URL}
         className="bg-white text-black border border-solid border-white px-3 py-2 shadow-lg rounded font-semibold md:text-xs lg:text-sm"
       >
         BE A VOLUNTEER
       </Button>
     ),
-    width: "w-full md:w-1/4",
+    width: 'w-full md:w-1/4',
   },
 ];
 
 export default function TopHero() {
   return (
-    <section className='relative h-[18.75rem] md:h-[25rem] lg:h-[50rem]'>
-      <Image
-        src="/gaza-kids.webp"
-        alt="Palestinian Children in Gaza: Humanitarian Crisis"
-        fill
-        priority
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-        quality={100}
-        loading="eager"
-      />
+    <section
+      className="relative h-[18.75rem] md:h-[25rem] lg:h-[50rem]"
+      style={{
+        backgroundImage: "url('/gaza-kids.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}
+    >
+      <div className="bg-black opacity-40 transition-all duration-300 absolute inset-0 z-10 pointer-events-none" />
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="relative px-8 py-4 md:px-10 md:py-6 lg:px-14 lg:py-8 bg-black/5 backdrop-blur-md rounded-2xl">
-          <h1 className="text-lg sm:text-4xl lg:text-7xl font-extrabold text-center text-white">
-            GAZA SOUP KITCHEN
-          </h1>
-        </div>
+        <h1 className="text-lg sm:text-4xl lg:text-7xl font-extrabold text-center text-white">GAZA SOUP KITCHEN</h1>
       </div>
       <div className="absolute inset-0 flex flex-col items-center md:flex-row md:items-end justify-center mx-auto -bottom-[55rem] md:-bottom-28 z-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         {TOP_HERO_BOXES.map((item, index) => (
@@ -81,5 +76,5 @@ export default function TopHero() {
         ))}
       </div>
     </section>
-  )
+  );
 }

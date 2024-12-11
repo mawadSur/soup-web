@@ -1,4 +1,4 @@
-import GetInvolved from "@/components/get-Involved";
+import GetInvolved from "@/components/get-involved";
 import Hero from "@/components/hero";
 import TopHero from "@/components/top-hero";
 

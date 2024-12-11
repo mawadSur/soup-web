@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --color-1: #f86f2d;
   --color-2: #fa8f3d;
   --color-3:#faaa3a;
   --white-hover:#ffffffcc;
-  --font-primary: 'Overpass', Arial, sans-serif;
-  --font-secondary: 'Dosis', Arial, sans-serif;
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: 'Noto Serif', serif;
   background-color: var(--white);
   font-size: 16px;
   line-height: 1.8;
