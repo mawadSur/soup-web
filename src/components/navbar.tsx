@@ -25,10 +25,10 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="w-full bg-black text-white z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold flex items-center gap-4">
           <Image src="/gazasoup-logo.webp" alt="Logo" width={50} height={50} />
-          <p>GAZASOUPKITCHEN</p>
+          <p className='hidden lg:block'>GAZASOUPKITCHEN</p>
         </Link>
 
         <button
@@ -47,7 +47,7 @@ export default function Navbar() {
           role="navigation"
           aria-hidden={!isMenuOpen}
           className={cn(
-            "lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto",
+            "lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto z-30",
             "w-full lg:w-auto bg-black lg:bg-transparent",
             "transition-all duration-300 ease-in-out overflow-hidden",
             "lg:opacity-100",
@@ -80,7 +80,7 @@ export default function Navbar() {
                   href={item.href}
                   className={cn(
                     "block py-2 lg:py-0 transition-colors duration-300 font-medium",
-                    item.href === pathName ? "text-red-500" : "hover:text-white-hover text-white"
+                    item.href === pathName ? "text-red-300 font-bold" : "hover:text-red-300 text-white focus:text-red-300"
                   )}
                 >
                   {item.label}
