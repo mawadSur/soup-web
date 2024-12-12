@@ -4,6 +4,7 @@ import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from "react-icons/lia";
 import { PiHandHeart } from "react-icons/pi";
 
 export const DONATION_URL = 'https://givebutter.com/gaza-soup-kitchen';
+export const DONATION_URL2 = "https://donatestock.com/gaza-soup-kitchen"
 export const CHILDRENSERVED = 1432805;
 
 export const NAVIGATIONS = [
