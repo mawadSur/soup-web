@@ -20,7 +20,6 @@ export default {
       },
       animation: {
         buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
-        move: "move 5s linear infinite",
       },
       keyframes: {
         buttonheartbeat: {
@@ -36,10 +35,6 @@ export default {
             'box-shadow': '0 0 0 0 theme("colors.red.500/0")',
             transform: 'scale(1)',
           },
-        },
-        move: {
-          "0%": { transform: "translateX(-200px)" },
-          "100%": { transform: "translateX(200px)" },
         },
       },
     },

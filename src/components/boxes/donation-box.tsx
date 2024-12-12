@@ -12,6 +12,8 @@ const DonationBox = () => {
         as="a"
         target="_blank"
         href={DONATION_URL}
+        rel="noopener noreferrer"
+        aria-label="Donate a hot meal"
         className="bg-white text-black border border-solid border-white px-3 py-2 shadow-lg rounded font-semibold md:text-xs lg:text-sm"
       >
         BUY A HOT MEAL

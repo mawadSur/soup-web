@@ -6,6 +6,7 @@ export function CardHoverEffect({ url, image }: { url: string, image: string }) 
     <div className="w-full group/card">
       <Link
         target="_blank"
+        rel="noopener noreferrer"
         href={url}
         className={cn(
           "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl flex flex-col justify-between p-4",
