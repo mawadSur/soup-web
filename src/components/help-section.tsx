@@ -28,10 +28,10 @@ export default function HelpSection() {
         <Link target='_blank' href={DONATION_URL2} className="block w-full py-8 md:py-12 lg:pt-28 lg:pb-0">
           <Image
             src="/merch.webp"
-            alt="merch"
+            alt="Gaza Soup Kitchen Merchandise"
             layout="responsive"
-            width={1}
-            height={1}  // These values are just to maintain aspect ratio, actual values don't matter since layout="responsive"
+            width={1200}
+            height={800}
             loading='lazy'
           />
         </Link>
