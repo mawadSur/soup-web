@@ -1,6 +1,10 @@
 "use client"
 import { INVOLVED_ITEMS } from '@/constant'
+<<<<<<< Updated upstream
 import CardHoverEffect from './card-hover-effect'
+=======
+import CardShadowHoverEffect from './cards/card-shadow-hover-effect'
+>>>>>>> Stashed changes
 
 export default function GetInvolved() {
   return (
