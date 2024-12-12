@@ -56,9 +56,6 @@ export const INVOLVED_ITEMS = [
     description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
     icon: LiaHandHoldingUsdSolid
   }
-<<<<<<< Updated upstream
-];
-=======
 ];
 
 export const ABOUT = [
@@ -107,4 +104,3 @@ export const HELPS = [
       "This is where hope simmers, where every serving is a pledge of solidarity. Here, we do not just feed the hungry, we nurture the soul of Gaza, one pot, one person, one community at a time.​",
   }
 ]
->>>>>>> Stashed changes

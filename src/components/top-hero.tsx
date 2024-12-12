@@ -1,5 +1,4 @@
 'use client';
-<<<<<<< Updated upstream
 import Image from 'next/image';
 import { Button } from './button';
 import Counter from './number-counter';
@@ -77,15 +76,5 @@ export default function TopHero() {
         ))}
       </div>
     </section>
-=======
-import BlurredBgComponent from './blurred-bg';
-import { HeroBox } from './boxes';
-
-export default function TopHero() {
-  return (
-    <BlurredBgComponent heroText="GAZA SOUP KITCHEN">
-      <HeroBox />
-    </BlurredBgComponent>
->>>>>>> Stashed changes
-  );
+  )
 }
