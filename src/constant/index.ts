@@ -59,9 +59,9 @@ export const INVOLVED_ITEMS = [
 ];
 
 export const LATEST_DONATIONS = [
-  { id: 1, name: 'Ivan Jacobson', amount: 300, cause: 'Children Needs Food', img: "/person_1.jpg" },
-  { id: 2, name: 'Ivan Jacobson', amount: 150, cause: 'Children Needs Food', img: "/person_2.jpg" },
-  { id: 3, name: 'Ivan Jacobson', amount: 250, cause: 'Children Needs Food', img: "/person_3.jpg" },
+  { id: 1, name: 'Ivan Jacobson', amount: 300, cause: 'Children Needs Food', img: "/person_1.jpg", timestamp: '2024-05-01T12:00:00Z' },
+  { id: 2, name: 'Ivan Jacobson', amount: 150, cause: 'Children Needs Food', img: "/person_2.jpg", timestamp: '2024-01-02T12:00:00Z' },
+  { id: 3, name: 'Ivan Jacobson', amount: 250, cause: 'Children Needs Food', img: "/person_3.jpg", timestamp: '2024-01-03T12:00:00Z' },
 ];
 
 export const GALLERIES = [

@@ -11,9 +11,9 @@ export default function Gallery() {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {GALLERIES.map((item, index) => (
+        {GALLERIES.map((item) => (
           <Image
-            key={index}
+            key={item}
             src={item}
             alt="Gallery"
             width={200}
