@@ -4,6 +4,7 @@ import Hero from '@/components/hero';
 import LatestEvent from '@/components/latest-event';
 import TopHero from '@/components/top-hero';
 import Volunteer from '@/components/volunteer';
+import HelpSection from "@/components/help-section";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <GetInvolved />
       <Hero />
       <About />
-
+      <HelpSection />
       <LatestEvent />
       <Volunteer />
     </>

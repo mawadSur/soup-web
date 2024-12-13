@@ -1,7 +1,7 @@
 import { ABOUT, DONATION_URL, MEDIAS } from '@/constant';
 import Image from 'next/image';
 import { Button } from './button';
-import { CardHoverEffect } from './card-hover-effect';
+import { CardHoverEffect } from './cards/card-hover-effect';
 
 export default function About() {
   return (

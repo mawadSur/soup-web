@@ -6,7 +6,7 @@ import { DONATION_URL } from '@/constant';
 
 export default function Hero() {
   return (
-    <section className="py-10 sm:py-10 lg:py-24">
+    <section className="py-8 md:pt-12 md:pb-0 lg:py-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
@@ -22,7 +22,7 @@ export default function Hero() {
               </div>
             </h2>
 
-            <div className="mt-8 tracking-wide text-base text-black sm:text-xl font-normal">
+            <div className="mt-8 tracking-wide text-base text-black sm:text-xl">
               <TypingAnimation text="Right now in Gaza, every bite is a story of resilience and hope. Your contribution extends far beyond nourishment—it's a lifeline, a promise of better days. Stand with us in this mission of compassion and dignity. Your donation is their tomorrow. Act now." />
             </div>
 

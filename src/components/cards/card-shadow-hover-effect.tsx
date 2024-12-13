@@ -4,7 +4,7 @@ import React from 'react';
 import { IconType } from 'react-icons';
 
 type Props = {
-  items: { id: number, title: string; description: string; icon: IconType }[];
+  items: { id: number; title: string; description: string; icon: IconType }[];
   wrapperClasses?: string;
   itemClasses?: string;
 };
@@ -31,7 +31,7 @@ const AnimatedBackground = React.memo(
   ),
 );
 
-const CardHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperClasses }) => {
+const CardShadowHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperClasses }) => {
   const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
   return (
@@ -60,4 +60,4 @@ const CardHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperClasses }
     </div>
   );
 };
-export default CardHoverEffect;
+export default CardShadowHoverEffect;
