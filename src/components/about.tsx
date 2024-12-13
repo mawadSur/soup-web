@@ -1,13 +1,13 @@
 import { ABOUT, DONATION_URL, MEDIAS } from '@/constant';
 import Image from 'next/image';
 import { Button } from './button';
-import { CardHoverEffect } from './card-hover-effect';
+import { CardHoverEffect } from './cards/card-hover-effect';
 
 export default function About() {
   return (
     <section>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 className='pb-5 lg:pb-20 font-bold text-black text-xl sm:text-2xl md:text-4xl text-center'>About US</h2>
+        <h2 className='pb-8 md:py-16 lg:pb-20 font-bold text-black text-xl sm:text-2xl md:text-4xl text-center'>About US</h2>
         <div className="grid items-start grid-cols-1 gap-12 lg:grid-cols-2">
           <Image
             src="/MAHMOUD-ALMADHOUN.webp"
@@ -40,7 +40,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className='flex flex-col md:flex-row gap-2 py-5 lg:py-20'>
+        <div className='flex flex-col md:flex-row gap-2 py-10 lg:py-20'>
           {MEDIAS.map((item) => (
             <CardHoverEffect key={item.image} image={item.image} url={item.url} />
           ))}

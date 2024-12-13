@@ -1,6 +1,6 @@
-"use client"
-import { INVOLVED_ITEMS } from '@/constant'
-import CardShadowHoverEffect from './card-shadow-hover-effect'
+'use client';
+import { INVOLVED_ITEMS } from '@/constant';
+import CardShadowHoverEffect from './cards/card-shadow-hover-effect';
 
 export default function GetInvolved() {
   return (
@@ -11,5 +11,5 @@ export default function GetInvolved() {
         </div>
       </div>
     </section>
-  )
+  );
 }

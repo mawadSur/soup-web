@@ -17,5 +17,5 @@ export default function TopHero() {
       </div>
       <HeroBox />
     </section>
-  );
+  )
 }
