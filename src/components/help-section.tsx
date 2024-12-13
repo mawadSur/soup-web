@@ -16,7 +16,7 @@ export default function HelpSection() {
       <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {HELPS.map((card) => (
-            <MinimalCard>
+            <MinimalCard key={card.title}>
               <MinimalCardImage src={card.image} alt={card.title} />
               <MinimalCardTitle>{card.title}</MinimalCardTitle>
               <MinimalCardDescription>

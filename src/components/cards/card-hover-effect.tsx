@@ -17,6 +17,7 @@ export function CardHoverEffect({ url, image }: { url: string, image: string }) 
             fill
             className="object-cover"
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black/20 opacity-60"></div>
