@@ -34,13 +34,13 @@ export function TypingAnimation({
   }, [duration, i]);
 
   return (
-    <h1
+    <p
       className={cn(
         "drop-shadow-sm",
         className,
       )}
     >
       {displayedText ? displayedText : text}
-    </h1>
+    </p>
   );
 }

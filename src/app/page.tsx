@@ -1,4 +1,5 @@
 import Gallery from "@/components/gallery";
+import About from "@/components/about";
 import GetInvolved from "@/components/get-involved";
 import Hero from "@/components/hero";
 import LastestDonations from "@/components/latest-donations";
@@ -10,10 +11,7 @@ export default function Home() {
       <TopHero />
       <GetInvolved />
       <Hero />
-
-
-
-
+      <About />
       <LastestDonations />
       <Gallery />
     </>
