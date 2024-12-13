@@ -4,7 +4,7 @@ import React from 'react';
 import { IconType } from 'react-icons';
 
 type Props = {
-  items: { title: string; description: string; icon: IconType }[];
+  items: { id: number, title: string; description: string; icon: IconType }[];
   wrapperClasses?: string;
   itemClasses?: string;
 };
@@ -32,22 +32,22 @@ const AnimatedBackground = React.memo(
 );
 
 const CardHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperClasses }) => {
-  const [hoveredIdx, setHoveredIdx] = React.useState<number | null>(null);
+  const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
   return (
     <div className={cn('grid md:grid-cols-3', itemClasses)}>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
-          key={idx}
+          key={item.id}
           className={cn('relative flex flex-col gap-3 p-4', itemClasses)}
           role="button"
           tabIndex={0}
-          onMouseEnter={() => setHoveredIdx(idx)}
-          onMouseLeave={() => setHoveredIdx(null)}
-          onFocus={() => setHoveredIdx(idx)}
-          onBlur={() => setHoveredIdx(null)}
+          onMouseEnter={() => setHoveredId(item.id)}
+          onMouseLeave={() => setHoveredId(null)}
+          onFocus={() => setHoveredId(item.id)}
+          onBlur={() => setHoveredId(null)}
         >
-          <AnimatedBackground isVisible={hoveredIdx === idx} />
+          <AnimatedBackground isVisible={hoveredId === item.id} />
           <div className="z-[1] space-y-3">
             <div className="flex items-center mb-4">
               <item.icon size={50} className="text-color2" />
