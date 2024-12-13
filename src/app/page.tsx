@@ -4,6 +4,8 @@ import Hero from '@/components/hero';
 import LatestEvent from '@/components/latest-event';
 import TopHero from '@/components/top-hero';
 import Volunteer from '@/components/volunteer';
+import Gallery from '@/components/gallery';
+import LatestDonations from '@/components/latest-donations';
 import HelpSection from "@/components/help-section";
 
 export default function Home() {
@@ -14,6 +16,8 @@ export default function Home() {
       <Hero />
       <About />
       <HelpSection />
+      <LatestDonations />
+      <Gallery />
       <LatestEvent />
       <Volunteer />
     </>

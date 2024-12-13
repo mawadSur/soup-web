@@ -62,6 +62,44 @@ export const INVOLVED_ITEMS = [
   },
 ];
 
+export const LATEST_DONATIONS = [
+  {
+    id: 1,
+    name: 'Ivan Jacobson',
+    amount: 300,
+    cause: 'Children Needs Food',
+    img: '/person_1.jpg',
+    timestamp: '2024-05-01T12:00:00Z',
+  },
+  {
+    id: 2,
+    name: 'Ivan Jacobson',
+    amount: 150,
+    cause: 'Children Needs Food',
+    img: '/person_2.jpg',
+    timestamp: '2024-01-02T12:00:00Z',
+  },
+  {
+    id: 3,
+    name: 'Ivan Jacobson',
+    amount: 250,
+    cause: 'Children Needs Food',
+    img: '/person_3.jpg',
+    timestamp: '2024-01-03T12:00:00Z',
+  },
+];
+
+export const GALLERIES = [
+  '/image_1.jpg',
+  '/image_2.jpg',
+  '/image_3.jpg',
+  '/cause-2.jpg',
+  '/cause-3.jpg',
+  '/cause-4.jpg',
+  '/cause-5.jpg',
+  '/cause-6.jpg',
+];
+
 export const ABOUT = [
   'Chef Mahmoud, who always ended his videos by thanking his friends in the United States and signing off with the Arabic word “Mostamreen” (مستمرين) 💪, meaning “we will continue,” left a legacy of resilience and hope.His spirit lives on through our family and friends who now manage the different locations for us across North and South Gaza.',
   'This morning, two of our dedicated crew members in North Gaza served hot meals to those in need—pasta 🍝 at one location and Palestinian Maftool 🍲 at another.These two locations, roughly two miles apart, reflect the strength of our shared mission.',
@@ -81,6 +119,7 @@ export const MEDIAS = [
     url: '/',
   },
 ];
+
 export const EVENTS = [
   {
     image: '/gaza-kids.webp',
