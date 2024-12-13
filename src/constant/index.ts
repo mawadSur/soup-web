@@ -10,11 +10,11 @@ export const CHILDRENSERVED = 1432805;
 export const NAVIGATIONS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Causes', href: '/causes' },
-  { label: 'Donate', href: '/donate' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Gallery', href: '/gallery' },
+  { label: 'Donate', href: '/donate' },
+  { label: 'Media', href: '/media' },
   { label: 'Events', href: '/event' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' }
 ];
 
@@ -43,16 +43,19 @@ export const SOCIALS = [
 
 export const INVOLVED_ITEMS = [
   {
+    id: 1,
     title: "Make Donation",
     description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
     icon: PiHandHeart
   },
   {
+    id: 2,
     title: "Become A Volunteer",
     description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
     icon: LiaHandshakeSolid
   },
   {
+    id: 3,
     title: "Sponsorship",
     description: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.",
     icon: LiaHandHoldingUsdSolid

@@ -36,7 +36,7 @@ export default function Hero() {
                 target="_blank"
                 href={DONATION_URL}
                 rel="noopener noreferrer"
-                aria-label="Donate to Gaza Soup Kitchen (opens in new tab)"
+                aria-label="Donate to Gaza Soup Kitchen"
                 className="animate-buttonheartbeat rounded-md flex items-baseline justify-center gap-2 px-10 py-4 text-base font-semibold bg-red-500 text-white"
               >
                 BUY A HOT MEAL
