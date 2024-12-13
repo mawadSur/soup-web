@@ -115,10 +115,40 @@ export const MEDIAS = [
     url: 'https://www.npr.org/2024/07/16/nx-s1-5025629/a-palestinian-american-raises-more-than-1-million-to-feed-his-family-and-others-in-gaza',
   },
   {
-    image: "/Gaza-Soup-Kitchen-3.webp",
-    url: "/"
-  }
-]
+    image: '/Gaza-Soup-Kitchen-3.webp',
+    url: '/',
+  },
+];
+
+export const EVENTS = [
+  {
+    image: '/gaza-kids.webp',
+    date: 'Jan. 15, 2024',
+    title: 'Tech Trends 2024',
+    time: '9:00AM-5:00PM',
+    venue: 'Tech Hub Convention Center',
+    description: 'Discover the latest innovations in AI, robotics, and blockchain at our annual tech summit.',
+    link: DONATION_URL,
+  },
+  {
+    image: '/gaza-kids.webp',
+    date: 'Feb. 20, 2024',
+    title: 'Art in the Digital Age',
+    time: '1:00PM-6:00PM',
+    venue: 'Downtown Gallery',
+    description: 'An exploration of how technology is shaping the future of art and creativity.',
+    link: DONATION_URL,
+  },
+  {
+    image: '/gaza-kids.webp',
+    date: 'Mar. 5, 2024',
+    title: 'Health and Wellness Expo',
+    time: '10:00AM-4:00PM',
+    venue: 'City Sports Arena',
+    description: 'Join us for a day dedicated to health, fitness, and mental well-being with workshops and activities.',
+    link: DONATION_URL,
+  },
+];
 
 export const HELPS = [
   {

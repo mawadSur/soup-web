@@ -10,19 +10,15 @@ export default function Hero() {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="font-bold text-black text-xl sm:text-2xl md:text-3xl">
+            <h2 className="font-bold text-black text-xl sm:text-2xl md:text-4xl">
               In a world abundant in resources,
               <div className="relative inline-flex">
                 <span className="absolute inset-x-0 bottom-0 border-b-[15px] border-[#4ADE80]"></span>
-                <h2 className="relative font-bold text-black text-3xl md:text-5xl lg:text-6xl xl:text-6xl">
-                  no child should
-                </h2>
+                <h2 className="relative font-bold text-black text-3xl md:text-7xl">no child should</h2>
               </div>
               <div className="relative inline-flex">
                 <span className="absolute inset-x-0 bottom-0 border-b-[15px] border-[#4ADE80]"></span>
-                <h2 className="relative font-bold text-black text-3xl md:text-5xl lg:text-6xl xl:text-6xl">
-                  ever go to bed hungry.
-                </h2>
+                <h2 className="relative font-bold text-black text-3xl md:text-7xl">ever go to bed hungry.</h2>
               </div>
             </h2>
 
@@ -37,7 +33,7 @@ export default function Hero() {
                 href={DONATION_URL}
                 rel="noopener noreferrer"
                 aria-label="Donate to Gaza Soup Kitchen"
-                className="animate-buttonheartbeat rounded-md flex items-baseline justify-center gap-2 px-10 py-4 text-base font-semibold bg-red-500 text-white"
+                className="animate-buttonheartbeat rounded-md flex items-baseline justify-center gap-2 px-10 py-4 text-base font-semibold bg-[#B71C1C] text-white"
               >
                 BUY A HOT MEAL
                 <GiHotMeal size={20} />
