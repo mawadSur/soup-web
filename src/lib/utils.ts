@@ -21,5 +21,9 @@ export const formatNumber = (num: number, currency = '$', locale = 'en-US') => {
 
 export function formatRelativeTime(timestamp: string) {
   if (!timestamp) return 'Unknown time';
-  return formatDistanceToNow(new Date(timestamp), { addSuffix: true });
+  const date = new Date(timestamp);
+  if (isNaN(date.getTime())) {
+    return 'Invalid date';
+  }
+  return formatDistanceToNow(date, { addSuffix: true });
 }
