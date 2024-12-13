@@ -1,4 +1,4 @@
-import { GALLERYS } from '@/constant'
+import { GALLERIES } from '@/constant'
 import Image from 'next/image'
 import React from 'react'
 
@@ -10,8 +10,8 @@ export default function Gallery() {
           <h2 className="font-bold text-black text-xl sm:text-2xl md:text-3xl">Our Gallery</h2>
         </div>
       </div>
-      <div className="grid grid-cols-4">
-        {GALLERYS.map((item, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {GALLERIES.map((item, index) => (
           <Image
             key={index}
             src={item}
