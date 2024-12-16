@@ -1,4 +1,3 @@
-'use server';
 import qs from 'qs';
 import { fetchData } from '@/lib/fetch';
 

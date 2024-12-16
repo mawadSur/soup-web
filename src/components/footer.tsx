@@ -1,4 +1,3 @@
-import { NAVIGATIONS, SOCIALS } from '@/constant';
 import type { Footer } from '@/types';
 import Link from 'next/link';
 import React from 'react';
