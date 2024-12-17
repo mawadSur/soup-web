@@ -27,14 +27,14 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
   return (
     <nav ref={navRef} className="w-full bg-black text-white z-50">
       <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 py-3 flex justify-between items-center">
-        <Link href={navbar.LogoLink.href} className="text-xl font-bold flex items-center gap-4">
+        <Link href={navbar.logoLink.href} className="text-xl font-bold flex items-center gap-4">
           <Image
-            src={`/${navbar.LogoLink.image.name}`}
-            alt={navbar.LogoLink.image.alternativeText}
+            src={`/${navbar.logoLink.image.name}`}
+            alt={navbar.logoLink.image.alternativeText}
             width={50}
             height={50}
           />
-          <p className="hidden lg:block">{navbar.LogoLink.label}</p>
+          <p className="hidden lg:block uppercase">{navbar.logoLink.label}</p>
         </Link>
 
         <button

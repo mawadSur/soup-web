@@ -20,6 +20,13 @@ export type ColumnLayoutProps = {
   mission?: boolean;
 };
 
+export enum EICONS {
+  FACEBOOK = 'facebook',
+  INSTAGRAM = 'instagram',
+  LINKEDIN = 'linkedin',
+  BLUESKY = 'bluesky',
+}
+
 type Image = {
   id: number;
   documentId: string;
@@ -27,7 +34,7 @@ type Image = {
   alternativeText: string;
 };
 
-type LogoLink = {
+type logoLink = {
   id: number;
   label: string;
   href: string;
@@ -57,6 +64,6 @@ export type Footer = {
 
 export type Navbar = {
   id: number;
-  LogoLink: LogoLink;
+  logoLink: logoLink;
   link: Link[];
 };

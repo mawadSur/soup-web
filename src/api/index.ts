@@ -9,7 +9,7 @@ export const fetchNavbar = async () => {
     populate: {
       navbar: {
         populate: {
-          LogoLink: {
+          logoLink: {
             populate: {
               image: {
                 fields: ['name', 'alternativeText'],
