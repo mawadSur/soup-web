@@ -7,12 +7,14 @@ export async function fetchData(url: string) {
   };
 
   try {
-    const response = await fetch(url, headers);
+    const response = await fetch(url, { next: { revalidate: 300 }, ...headers });
+
+    if (!response.ok) return [];
+
     const data = await response.json();
-    if (!response.ok) throw new Error('Failed to fetch data');
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
-    throw error;
+    return [];
   }
 }
