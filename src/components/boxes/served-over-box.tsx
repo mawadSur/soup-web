@@ -1,4 +1,3 @@
-import { CHILDRENSERVED } from '@/constant'; // Assuming this constant exists for the count
 import { ServedOver } from '@/types';
 import Counter from '../number-counter';
 

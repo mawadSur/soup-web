@@ -1,16 +1,23 @@
 import qs from 'qs';
 import { fetchData } from '@/lib/fetch';
+import { SectionType } from '@/types';
 
 const baseUrl = process.env.BASE_URL;
 
-export const fetchNavbar = async () => {
-  const path = '/api/global';
+const buildUrl = (path: string, queryParams: object): string => {
+  const query = qs.stringify(queryParams);
+  const url = new URL(path, baseUrl);
+  url.search = query;
+  return url.href;
+};
 
-  const query = qs.stringify({
+export const fetchGlobalData = async () => {
+  const path = '/api/global';
+  const queryParams = {
     populate: {
       navbar: {
         populate: {
-          LogoLink: {
+          logoLink: {
             populate: {
               image: {
                 fields: ['name', 'alternativeText'],
@@ -33,24 +40,20 @@ export const fetchNavbar = async () => {
         },
       },
     },
-  });
+  };
 
-  const url = new URL(path, baseUrl);
-  url.search = query;
-
-  const data = await fetchData(url.href);
-
+  const url = buildUrl(path, queryParams);
+  const data = await fetchData(url);
   return data;
 };
 
 export const fetchLandingPage = async () => {
   const path = '/api/landing-page';
-
-  const query = qs.stringify({
+  const queryParams = {
     populate: {
       sections: {
         on: {
-          'section.top-hero': {
+          [SectionType.TOP_HERO]: {
             populate: {
               image: {
                 fields: ['name', 'alternativeText', 'width', 'height'],
@@ -61,15 +64,43 @@ export const fetchLandingPage = async () => {
               servedOver: '*',
             },
           },
+          [SectionType.GET_INVOLVED]: {
+            populate: '*',
+          },
+          [SectionType.HERO]: {
+            populate: {
+              hero: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.ABOUT]: {
+            populate: {
+              about: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },
-  });
+  };
 
-  const url = new URL(path, baseUrl);
-  url.search = query;
-
-  const data = await fetchData(url.href);
-
+  const url = buildUrl(path, queryParams);
+  const data = await fetchData(url);
   return data;
 };

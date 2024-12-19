@@ -1,7 +1,7 @@
 'use client';
 import { SectionTopHero } from '@/types';
 import Image from 'next/image';
-import { BoxesButton } from './boxes/boxes-button';
+import { BoxesButton } from './boxes';
 import ServedOverBox from './boxes/served-over-box';
 
 export default function TopHero({ data }: { data: SectionTopHero }) {
