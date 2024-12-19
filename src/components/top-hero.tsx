@@ -8,7 +8,7 @@ export default function TopHero({ data }: { data: SectionTopHero }) {
   return (
     <section className="relative h-[18.75rem] md:h-[25rem] lg:h-[50rem]">
       <Image
-        src={`/${data.image.name}`}
+        src={'/' + data.image.name}
         alt={data.image.alternativeText}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

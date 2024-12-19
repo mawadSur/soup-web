@@ -1,5 +1,6 @@
 import qs from 'qs';
 import { fetchData } from '@/lib/fetch';
+import { SectionType } from '@/types';
 
 const baseUrl = process.env.BASE_URL;
 
@@ -50,7 +51,7 @@ export const fetchLandingPage = async () => {
     populate: {
       sections: {
         on: {
-          'section.top-hero': {
+          [SectionType.TOP_HERO]: {
             populate: {
               image: {
                 fields: ['name', 'alternativeText', 'width', 'height'],
@@ -59,6 +60,95 @@ export const fetchLandingPage = async () => {
                 populate: '*',
               },
               servedOver: '*',
+            },
+          },
+          [SectionType.GET_INVOLVED]: {
+            populate: '*',
+          },
+          [SectionType.HERO]: {
+            populate: {
+              hero: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.ABOUT]: {
+            populate: {
+              about: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.MEDIA]: {
+            populate: {
+              medias: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.BLUR_BACKGROUND]: {
+            populate: {
+              backgroundImage: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.HELP]: {
+            populate: {
+              help: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.MERCH]: {
+            populate: {
+              backgroundImage: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.GAZA_SUPPORT]: {
+            populate: {
+              gazaSupport: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
             },
           },
         },

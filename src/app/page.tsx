@@ -1,4 +1,5 @@
 import { fetchLandingPage } from '@/api';
+import HelpSection from '@/components/help-section';
 import { SectionRenderer } from '@/components/section-renderer';
 import { SectionData } from '@/types';
 
@@ -8,7 +9,7 @@ export default async function Home() {
   return (
     <>
       {data.sections.map((section: SectionData) => (
-        <SectionRenderer key={section.id} section={section} />
+        <SectionRenderer key={section.__component} section={section} />
       ))}
     </>
   );
