@@ -4,8 +4,9 @@ import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from 'react-icons/lia';
 import { PiHandHeart } from 'react-icons/pi';
 
 export const DONATION_URL = 'https://givebutter.com/gaza-soup-kitchen';
-export const DONATION_URL2 = "https://donatestock.com/gaza-soup-kitchen"
+export const DONATION_URL2 = 'https://donatestock.com/gaza-soup-kitchen';
 export const CHILDRENSERVED = 1432805;
+export const REVALIDATE_TIME = 300;
 
 export const NAVIGATIONS = [
   { label: 'Home', href: '/' },
@@ -152,27 +153,27 @@ export const EVENTS = [
 
 export const HELPS = [
   {
-    image: "/food1.webp",
-    title: "A RECIPE FOR RESILIENCE",
+    image: '/food1.webp',
+    title: 'A RECIPE FOR RESILIENCE',
     description:
       "This isn't just a soup — it's a recipe for resilience, simmering on the stoves of Gaza, feeding bodies and souls alike. Each bowl serves not just sustenance but a steadfast vow: to fortify, to nourish, to endure.",
   },
   {
-    image: "/food2.webp",
-    title: "HANDS UNITED IN SERVICE",
+    image: '/food2.webp',
+    title: 'HANDS UNITED IN SERVICE',
     description:
-      "Amidst the steam of hearty soups, we find the warmth of shared hope. Every ladleful carries the spirit of community and the promise of sustenance for the children of Gaza.​",
+      'Amidst the steam of hearty soups, we find the warmth of shared hope. Every ladleful carries the spirit of community and the promise of sustenance for the children of Gaza.​',
   },
   {
-    image: "/food3.webp",
-    title: "THE WARMTH OF SHARED HOPE​",
+    image: '/food3.webp',
+    title: 'THE WARMTH OF SHARED HOPE​',
     description:
-      "In the quiet corners of resilience, even the smallest hands come together to lift more than just a meal — they raise the foundation of tomorrow on the strength of solidarity.​",
+      'In the quiet corners of resilience, even the smallest hands come together to lift more than just a meal — they raise the foundation of tomorrow on the strength of solidarity.​',
   },
   {
-    image: "/food4.webp",
-    title: "NURTURING COMMUNITY​",
+    image: '/food4.webp',
+    title: 'NURTURING COMMUNITY​',
     description:
-      "This is where hope simmers, where every serving is a pledge of solidarity. Here, we do not just feed the hungry, we nurture the soul of Gaza, one pot, one person, one community at a time.​",
-  }
-]
+      'This is where hope simmers, where every serving is a pledge of solidarity. Here, we do not just feed the hungry, we nurture the soul of Gaza, one pot, one person, one community at a time.​',
+  },
+];
