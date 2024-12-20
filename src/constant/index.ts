@@ -7,7 +7,7 @@ import LatestDonations from '@/components/latest-donations';
 import LatestEvent from '@/components/latest-event';
 import TopHero from '@/components/top-hero';
 import Volunteer from '@/components/volunteer';
-import { Sections } from '@/types';
+import { IconType, SectionType } from '@/types';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';
 import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from 'react-icons/lia';
@@ -15,7 +15,7 @@ import { PiHandHeart } from 'react-icons/pi';
 
 export const DONATION_URL = 'https://givebutter.com/gaza-soup-kitchen';
 export const DONATION_URL2 = 'https://donatestock.com/gaza-soup-kitchen';
-export const CHILDRENSERVED = 1432805;
+
 export const REVALIDATE_TIME = 300;
 
 export const NAVIGATIONS = [
@@ -49,27 +49,6 @@ export const SOCIALS = [
     name: 'Bluesky',
     href: 'https://bsky.app/profile/gazasoupkitchen.bsky.social',
     icon: FaBluesky,
-  },
-];
-
-export const INVOLVED_ITEMS = [
-  {
-    id: 1,
-    title: 'Make Donation',
-    description: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.',
-    icon: PiHandHeart,
-  },
-  {
-    id: 2,
-    title: 'Become A Volunteer',
-    description: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.',
-    icon: LiaHandshakeSolid,
-  },
-  {
-    id: 3,
-    title: 'Sponsorship',
-    description: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.',
-    icon: LiaHandHoldingUsdSolid,
   },
 ];
 
@@ -188,14 +167,20 @@ export const HELPS = [
   },
 ];
 
+export const iconMap = {
+  [IconType.DONATION]: PiHandHeart,
+  [IconType.VOLUNTEER]: LiaHandshakeSolid,
+  [IconType.SPONSORSHIP]: LiaHandHoldingUsdSolid,
+};
+
 export const componentMap = {
-  [Sections.TOP_HERO]: TopHero,
-  [Sections.GET_INVOLVED]: GetInvolved,
-  [Sections.HERO]: Hero,
-  [Sections.ABOUT]: About,
-  [Sections.HELP_SECTION]: HelpSection,
-  [Sections.LATEST_DONATIONS]: LatestDonations,
-  [Sections.GALLERY]: Gallery,
-  [Sections.LATEST_EVENT]: LatestEvent,
-  [Sections.VOLUNTEER]: Volunteer,
+  [SectionType.TOP_HERO]: TopHero,
+  [SectionType.GET_INVOLVED]: GetInvolved,
+  [SectionType.HERO]: Hero,
+  [SectionType.ABOUT]: About,
+  [SectionType.HELP_SECTION]: HelpSection,
+  [SectionType.LATEST_DONATIONS]: LatestDonations,
+  [SectionType.GALLERY]: Gallery,
+  [SectionType.LATEST_EVENT]: LatestEvent,
+  [SectionType.VOLUNTEER]: Volunteer,
 };

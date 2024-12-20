@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <>
       {data.sections.map((section: SectionData) => (
-        <SectionRenderer key={section.id} section={section} />
+        <SectionRenderer key={section.__component} section={section} />
       ))}
     </>
   );
