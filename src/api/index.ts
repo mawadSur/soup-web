@@ -1,6 +1,6 @@
-import qs from 'qs';
 import { fetchData } from '@/lib/fetch';
 import { SectionType } from '@/types';
+import qs from 'qs';
 
 const baseUrl = process.env.BASE_URL;
 
@@ -13,7 +13,7 @@ const buildUrl = (path: string, queryParams: object): string => {
 
 export const fetchGlobalData = async () => {
   const path = '/api/global';
-  const queryParams = {
+  const query = {
     populate: {
       navbar: {
         populate: {
@@ -25,31 +25,32 @@ export const fetchGlobalData = async () => {
             },
           },
           link: {
-            populate: true,
+            populate: '*',
           },
         },
       },
       footer: {
         populate: {
           link: {
-            populate: true,
+            populate: '*',
           },
           social: {
-            populate: true,
+            populate: '*',
           },
         },
       },
     },
   };
 
-  const url = buildUrl(path, queryParams);
+  const url = buildUrl(path, query);
   const data = await fetchData(url);
   return data;
 };
 
 export const fetchLandingPage = async () => {
   const path = '/api/landing-page';
-  const queryParams = {
+
+  const query = {
     populate: {
       sections: {
         on: {
@@ -95,17 +96,6 @@ export const fetchLandingPage = async () => {
               },
             },
           },
-          [SectionType.MEDIA]: {
-            populate: {
-              medias: {
-                populate: {
-                  image: {
-                    fields: ['name', 'alternativeText', 'width', 'height'],
-                  },
-                },
-              },
-            },
-          },
           [SectionType.BLUR_BACKGROUND]: {
             populate: {
               backgroundImage: {
@@ -128,26 +118,19 @@ export const fetchLandingPage = async () => {
               },
             },
           },
-          [SectionType.MERCH]: {
+          [SectionType.GALLERY]: {
             populate: {
-              backgroundImage: {
-                populate: {
-                  image: {
-                    fields: ['name', 'alternativeText', 'width', 'height'],
-                  },
-                },
+              gallery: {
+                fields: ['name', 'alternativeText', 'width', 'height'],
               },
             },
           },
-          [SectionType.GAZA_SUPPORT]: {
+          [SectionType.EVENT]: {
             populate: {
-              gazaSupport: {
+              events: {
                 populate: {
                   image: {
                     fields: ['name', 'alternativeText', 'width', 'height'],
-                  },
-                  button: {
-                    populate: '*',
                   },
                 },
               },
@@ -158,7 +141,7 @@ export const fetchLandingPage = async () => {
     },
   };
 
-  const url = buildUrl(path, queryParams);
+  const url = buildUrl(path, query);
   const data = await fetchData(url);
   return data;
 };

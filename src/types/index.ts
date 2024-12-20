@@ -1,13 +1,3 @@
-export type Event = {
-  title: string;
-  image: string;
-  date: string;
-  time: string;
-  venue: string;
-  description: string;
-  link: string;
-};
-
 export type ColumnLayoutProps = {
   imageSrc: string;
   imageAlt: string;
@@ -70,6 +60,9 @@ export type Card = {
   icon: IconType;
   heading: string;
   paragraph: string;
+  time: string;
+  location: string;
+  href: string;
   image: Image;
 };
 
@@ -140,6 +133,20 @@ export type BackgroundImage = {
   backgroundImage: LogoLink;
 };
 
+export type EventSection = {
+  __component: SectionType.EVENT;
+  id: number;
+  heading: string;
+  events: Card[];
+};
+
+export type GallerySection = {
+  __component: SectionType.GALLERY;
+  id: number;
+  heading: string;
+  gallery: Image[];
+};
+
 export enum IconType {
   DONATION = 'Donation',
   VOLUNTEER = 'Volunteer',
@@ -157,9 +164,16 @@ export const enum SectionType {
   MEDIA = 'section.media',
   LATEST_DONATIONS = 'section.latest-donations',
   GALLERY = 'section.gallery',
-  LATEST_EVENT = 'section.latest-event',
+  EVENT = 'section.event',
   VOLUNTEER = 'section.volunteer',
   GAZA_SUPPORT = 'section.gaza-support',
 }
 
-export type SectionData = SectionTopHero | HeroSection | GetInvolvedSection | AboutSection | MediaSection;
+export type SectionData =
+  | SectionTopHero
+  | HeroSection
+  | GetInvolvedSection
+  | AboutSection
+  | MediaSection
+  | GallerySection
+  | EventSection;

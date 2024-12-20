@@ -169,6 +169,6 @@ export const componentMap = {
   [SectionType.BLUR_BACKGROUND]: BlurredBgComponent,
   [SectionType.LATEST_DONATIONS]: LatestDonations,
   [SectionType.GALLERY]: Gallery,
-  [SectionType.LATEST_EVENT]: LatestEvent,
+  [SectionType.EVENT]: LatestEvent,
   [SectionType.VOLUNTEER]: Volunteer,
 };
