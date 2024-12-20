@@ -4,11 +4,12 @@ import { SectionData } from '@/types';
 
 export default async function Home() {
   const { data } = await fetchLandingPage();
+  console.log(data);
 
   return (
     <>
       {data.sections.map((section: SectionData) => (
-        <SectionRenderer key={section.id} section={section} />
+        <SectionRenderer key={section.__component} section={section} />
       ))}
     </>
   );

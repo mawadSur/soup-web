@@ -1,4 +1,5 @@
 import About from '@/components/about';
+import BlurredBgComponent from '@/components/blurred-bg';
 import Gallery from '@/components/gallery';
 import GetInvolved from '@/components/get-involved';
 import HelpSection from '@/components/help-section';
@@ -7,7 +8,7 @@ import LatestDonations from '@/components/latest-donations';
 import LatestEvent from '@/components/latest-event';
 import TopHero from '@/components/top-hero';
 import Volunteer from '@/components/volunteer';
-import { Sections } from '@/types';
+import { SectionType } from '@/types';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';
 import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from 'react-icons/lia';
@@ -111,26 +112,6 @@ export const GALLERIES = [
   '/cause-6.jpg',
 ];
 
-export const ABOUT = [
-  'Chef Mahmoud, who always ended his videos by thanking his friends in the United States and signing off with the Arabic word “Mostamreen” (مستمرين) 💪, meaning “we will continue,” left a legacy of resilience and hope.His spirit lives on through our family and friends who now manage the different locations for us across North and South Gaza.',
-  'This morning, two of our dedicated crew members in North Gaza served hot meals to those in need—pasta 🍝 at one location and Palestinian Maftool 🍲 at another.These two locations, roughly two miles apart, reflect the strength of our shared mission.',
-];
-
-export const MEDIAS = [
-  {
-    image: '/Gaza-Soup-Kitchen.webp',
-    url: 'https://www.npr.org/2024/03/03/1235606468/in-north-gaza-a-local-soup-kitchen-tries-to-compensate-for-hunger-amid-dwindling',
-  },
-  {
-    image: '/Gaza-Soup-Kitchen-2.webp',
-    url: 'https://www.npr.org/2024/07/16/nx-s1-5025629/a-palestinian-american-raises-more-than-1-million-to-feed-his-family-and-others-in-gaza',
-  },
-  {
-    image: '/Gaza-Soup-Kitchen-3.webp',
-    url: '/',
-  },
-];
-
 export const EVENTS = [
   {
     image: '/gaza-kids.webp',
@@ -189,13 +170,14 @@ export const HELPS = [
 ];
 
 export const componentMap = {
-  [Sections.TOP_HERO]: TopHero,
-  [Sections.GET_INVOLVED]: GetInvolved,
-  [Sections.HERO]: Hero,
-  [Sections.ABOUT]: About,
-  [Sections.HELP_SECTION]: HelpSection,
-  [Sections.LATEST_DONATIONS]: LatestDonations,
-  [Sections.GALLERY]: Gallery,
-  [Sections.LATEST_EVENT]: LatestEvent,
-  [Sections.VOLUNTEER]: Volunteer,
+  [SectionType.TOP_HERO]: TopHero,
+  [SectionType.GET_INVOLVED]: GetInvolved,
+  [SectionType.HERO]: Hero,
+  [SectionType.ABOUT]: About,
+  [SectionType.HELP]: HelpSection,
+  [SectionType.BLUR_BACKGROUND]: BlurredBgComponent,
+  [SectionType.LATEST_DONATIONS]: LatestDonations,
+  [SectionType.GALLERY]: Gallery,
+  [SectionType.EVENT]: LatestEvent,
+  [SectionType.VOLUNTEER]: Volunteer,
 };
