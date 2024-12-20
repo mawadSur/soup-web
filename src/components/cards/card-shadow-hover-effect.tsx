@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { IconType } from 'react-icons';
+import { Card } from '@/types';
+import { renderIcon } from '../icon-renderer';
 
 type Props = {
-  items: { id: number; title: string; description: string; icon: IconType }[];
-  wrapperClasses?: string;
+  items: Card[];
   itemClasses?: string;
 };
 
@@ -31,7 +31,7 @@ const AnimatedBackground = React.memo(
   ),
 );
 
-const CardShadowHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperClasses }) => {
+const CardShadowHoverEffect: React.FC<Props> = ({ items, itemClasses }) => {
   const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
   return (
@@ -49,11 +49,9 @@ const CardShadowHoverEffect: React.FC<Props> = ({ items, itemClasses, wrapperCla
         >
           <AnimatedBackground isVisible={hoveredId === item.id} />
           <div className="z-[1] space-y-3">
-            <div className="flex items-center mb-4">
-              <item.icon size={50} className="text-color2" />
-            </div>
-            <h2 className="text-xl font-normal text-black mb-3">{item.title}</h2>
-            <p className="text-gray-500">{item.description}</p>
+            <div className="flex items-center mb-4">{renderIcon(item.icon)}</div>
+            <h2 className="text-xl font-normal text-black mb-3">{item.heading}</h2>
+            <p className="text-gray-500">{item.paragraph}</p>
           </div>
         </div>
       ))}

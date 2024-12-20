@@ -1,24 +1,18 @@
-import About from '@/components/about';
-import GetInvolved from '@/components/get-involved';
-import Hero from '@/components/hero';
-import LatestEvent from '@/components/latest-event';
-import TopHero from '@/components/top-hero';
-import Volunteer from '@/components/volunteer';
-import Gallery from '@/components/gallery';
+import { fetchLandingPage } from '@/api';
 import LatestDonations from '@/components/latest-donations';
-import HelpSection from "@/components/help-section";
+import { SectionRenderer } from '@/components/section-renderer';
+import Volunteer from '@/components/volunteer';
+import { SectionData } from '@/types';
 
-export default function Home() {
+export default async function Home() {
+  const { data } = await fetchLandingPage();
+
   return (
     <>
-      <TopHero />
-      <GetInvolved />
-      <Hero />
-      <About />
-      <HelpSection />
+      {data.sections.map((section: SectionData) => (
+        <SectionRenderer key={section.__component} section={section} />
+      ))}
       <LatestDonations />
-      <Gallery />
-      <LatestEvent />
       <Volunteer />
     </>
   );

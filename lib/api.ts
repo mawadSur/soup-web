@@ -76,17 +76,6 @@ const landingPageQueryParams = {
             },
           },
         },
-        [SectionType.MEDIA]: {
-          populate: {
-            medias: {
-              populate: {
-                image: {
-                  fields: ['name', 'alternativeText', 'width', 'height'],
-                },
-              },
-            },
-          },
-        },
         [SectionType.ABOUT]: {
           populate: {
             about: {
@@ -136,31 +125,6 @@ const landingPageQueryParams = {
               populate: {
                 image: {
                   fields: ['name', 'alternativeText', 'width', 'height'],
-                },
-              },
-            },
-          },
-        },
-        [SectionType.MERCH]: {
-          populate: {
-            backgroundImage: {
-              populate: {
-                image: {
-                  fields: ['name', 'alternativeText', 'width', 'height'],
-                },
-              },
-            },
-          },
-        },
-        [SectionType.GAZA_SUPPORT]: {
-          populate: {
-            gazaSupport: {
-              populate: {
-                image: {
-                  fields: ['name', 'alternativeText', 'width', 'height'],
-                },
-                button: {
-                  populate: '*',
                 },
               },
             },

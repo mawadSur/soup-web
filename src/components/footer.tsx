@@ -1,4 +1,4 @@
-import { EICONS, type Footer } from '@/types';
+import { SocialIcons, type Footer } from '@/types';
 import Link from 'next/link';
 import React from 'react';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
@@ -6,13 +6,13 @@ import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';
 
 function renderIcon(text: string) {
   switch (text) {
-    case EICONS.FACEBOOK:
+    case SocialIcons.FACEBOOK:
       return <FaSquareFacebook />;
-    case EICONS.INSTAGRAM:
+    case SocialIcons.INSTAGRAM:
       return <FaInstagramSquare />;
-    case EICONS.LINKEDIN:
+    case SocialIcons.LINKEDIN:
       return <FaLinkedin />;
-    case EICONS.BLUESKY:
+    case SocialIcons.BLUESKY:
       return <FaBluesky />;
     default:
       return null;
