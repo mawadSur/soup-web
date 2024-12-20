@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React from "react";
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import React from 'react';
 
 export const MinimalCardImage = React.forwardRef<
   HTMLDivElement,
@@ -16,7 +16,7 @@ export const MinimalCardImage = React.forwardRef<
     {...props}
   >
     <Image
-      src={src}
+      src={'/' + src}
       alt={alt}
       fill
       sizes="(max-width: 768px) 100vw, 200px"

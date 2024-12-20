@@ -31,7 +31,7 @@ type Image = {
   height?: number;
 };
 
-type LogoLink = {
+export type LogoLink = {
   id: number;
   label: string;
   href: string;
@@ -70,6 +70,7 @@ export type Card = {
   icon: IconType;
   heading: string;
   paragraph: string;
+  image: Image;
 };
 
 export type ServedOver = {
@@ -114,6 +115,31 @@ export type AboutSection = {
   about: LayoutColumn;
 };
 
+export type GazaSupportSection = {
+  __component: SectionType.ABOUT;
+  id: number;
+  gazaSupport: LayoutColumn;
+};
+
+export type HelpSection = {
+  __component: SectionType.HELP;
+  id: number;
+  heading: string;
+  help: Card[];
+};
+
+export type MediaSection = {
+  __component: SectionType.MEDIA;
+  id: number;
+  medias: LogoLink[];
+};
+
+export type BackgroundImage = {
+  __component: SectionType.MERCH | SectionType.BLUR_BACKGROUND;
+  id: number;
+  backgroundImage: LogoLink;
+};
+
 export enum IconType {
   DONATION = 'Donation',
   VOLUNTEER = 'Volunteer',
@@ -124,12 +150,16 @@ export const enum SectionType {
   TOP_HERO = 'section.top-hero',
   GET_INVOLVED = 'section.get-involved',
   HERO = 'section.hero',
+  BLUR_BACKGROUND = 'section.blur-background',
+  HELP = 'section.help',
+  MERCH = 'section.merch',
   ABOUT = 'section.about',
-  HELP_SECTION = 'section.help-section',
+  MEDIA = 'section.media',
   LATEST_DONATIONS = 'section.latest-donations',
   GALLERY = 'section.gallery',
   LATEST_EVENT = 'section.latest-event',
   VOLUNTEER = 'section.volunteer',
+  GAZA_SUPPORT = 'section.gaza-support',
 }
 
-export type SectionData = SectionTopHero | HeroSection | GetInvolvedSection | AboutSection;
+export type SectionData = SectionTopHero | HeroSection | GetInvolvedSection | AboutSection | MediaSection;

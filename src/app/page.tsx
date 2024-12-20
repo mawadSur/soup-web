@@ -1,4 +1,5 @@
 import { fetchLandingPage } from '@/api';
+import HelpSection from '@/components/help-section';
 import { SectionRenderer } from '@/components/section-renderer';
 import { SectionData } from '@/types';
 

@@ -95,6 +95,64 @@ export const fetchLandingPage = async () => {
               },
             },
           },
+          [SectionType.MEDIA]: {
+            populate: {
+              medias: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.BLUR_BACKGROUND]: {
+            populate: {
+              backgroundImage: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.HELP]: {
+            populate: {
+              help: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.MERCH]: {
+            populate: {
+              backgroundImage: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                },
+              },
+            },
+          },
+          [SectionType.GAZA_SUPPORT]: {
+            populate: {
+              gazaSupport: {
+                populate: {
+                  image: {
+                    fields: ['name', 'alternativeText', 'width', 'height'],
+                  },
+                  button: {
+                    populate: '*',
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },

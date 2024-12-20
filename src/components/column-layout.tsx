@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import { ColumnLayoutProps } from '@/types';
 import Image from 'next/image';
-import { Button } from './button';
 
 export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
   headline,
@@ -24,8 +23,7 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
 
         {href && (
           <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
-            <Button
-              as="a"
+            <a
               target="_blank"
               href={href}
               rel="noopener noreferrer"
@@ -33,12 +31,12 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
               className={`animate-buttonheartbeat rounded-md flex items-baseline justify-center gap-2 px-10 py-4 text-base font-semibold bg-[#B71C1C] text-white ${className}`}
             >
               {label}
-            </Button>
+            </a>
           </div>
         )}
       </div>
       <Image
-        src={`/${imageSrc}`}
+        src={'/' + imageSrc}
         alt={imageAlt}
         width={imageWidth}
         height={imageHeight}
