@@ -130,6 +130,17 @@ const landingPageQueryParams = {
             },
           },
         },
+        [SectionType.GALLERY_MASONRY]: {
+          populate: {
+            gallery: {
+              populate: {
+                image: {
+                  fields: ['name', 'alternativeText', 'width', 'height'],
+                },
+              },
+            },
+          },
+        },
         [SectionType.EVENT]: {
           populate: {
             events: {
@@ -172,13 +183,16 @@ const landingPageQueryParams = {
 };
 
 export const fetchGlobalData = async () => {
-  const path = '/api/global';
-  const url = buildUrl(path, globalQueryParams);
+  const url = buildUrl('global', globalQueryParams);
   return await fetchData(url);
 };
 
 export const fetchLandingPage = async () => {
-  const path = '/api/landing-page';
-  const url = buildUrl(path, landingPageQueryParams);
+  const url = buildUrl('landing-page', landingPageQueryParams);
+  return await fetchData(url);
+};
+
+export const fetchDynamicPage = async (slug: string) => {
+  const url = buildUrl(slug, landingPageQueryParams);
   return await fetchData(url);
 };

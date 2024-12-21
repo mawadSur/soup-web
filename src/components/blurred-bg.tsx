@@ -2,12 +2,12 @@ import { BackgroundImage } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 
-const BlurredBgComponent = ({ data }: { data: BackgroundImage }) => {
+export const BlurredBgComponent = ({ data }: { data: BackgroundImage }) => {
   return (
     <section className="relative h-[18.75rem] md:h-[25rem] lg:h-[30rem] overflow-hidden">
       <Image
         src={'/' + data.backgroundImage.image.name}
-        alt="gaza kids"
+        alt={data.backgroundImage.image.alternativeText}
         fill
         className="object-cover"
         priority
@@ -22,5 +22,3 @@ const BlurredBgComponent = ({ data }: { data: BackgroundImage }) => {
     </section>
   );
 };
-
-export default BlurredBgComponent;
