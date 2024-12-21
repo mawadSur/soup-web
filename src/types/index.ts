@@ -154,6 +154,13 @@ export type GallerySection = {
   gallery: Image[];
 };
 
+export type GalleryMasonrySection = {
+  __component: SectionType.GALLERY_MASONRY;
+  id: number;
+  heading: string;
+  gallery: LogoLink[];
+};
+
 export enum IconType {
   DONATION = 'Donation',
   VOLUNTEER = 'Volunteer',
@@ -166,6 +173,7 @@ export const enum SectionType {
   HERO = 'section.hero',
   BLUR_BACKGROUND = 'section.blur-background',
   HELP = 'section.help',
+  GALLERY_MASONRY = 'section.gallery-masonry',
   MERCH = 'section.merch',
   ABOUT = 'section.about',
   MEDIA = 'section.media',
@@ -183,6 +191,7 @@ export type SectionData =
   | AboutSection
   | MediaSection
   | GallerySection
+  | GalleryMasonrySection
   | EventSection
   | BackgroundImage
   | HelpSection

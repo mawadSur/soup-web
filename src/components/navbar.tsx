@@ -1,5 +1,4 @@
 'use client';
-import { NAVIGATIONS } from '@/constant';
 import { useOutsideClick } from '@/hooks/useOutside';
 import { cn } from '@/lib/utils';
 import type { Navbar } from '@/types';
@@ -23,6 +22,12 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
       setIsMenuOpen(false);
     }
   });
+
+  React.useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [pathName]);
 
   return (
     <nav ref={navRef} className="w-full bg-black text-white z-50">
@@ -69,7 +74,7 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
               'transition-all duration-300 ease-in-out',
             )}
           >
-            {navbar.link.map((item) => (
+            {navbar.link.map((item, index) => (
               <li
                 key={item.href}
                 className={cn(
@@ -77,7 +82,7 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
                   isMenuOpen ? `translate-x-0` : '-translate-x-5',
                 )}
                 style={{
-                  transitionDelay: isMenuOpen ? `${NAVIGATIONS.indexOf(item) * 50}ms` : '0ms',
+                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
                 }}
               >
                 <Link

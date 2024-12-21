@@ -10,7 +10,6 @@ export default function MerchSection({ data }: { data: BackgroundImage }) {
         <Image
           src={'/' + image.name}
           alt={image.alternativeText}
-          layout="responsive"
           width={image.width}
           height={image.height}
           loading="lazy"
