@@ -1,4 +1,4 @@
-import { fetchLandingPage } from '@/api';
+import { fetchLandingPage } from '@/api/strapi';
 import LatestDonations from '@/components/latest-donations';
 import { SectionRenderer } from '@/components/section-renderer';
 import Volunteer from '@/components/volunteer';

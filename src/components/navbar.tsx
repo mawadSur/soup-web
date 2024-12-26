@@ -58,7 +58,6 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
         <div
           id="primary-navigation"
           role="navigation"
-          aria-hidden={!isMenuOpen}
           className={cn(
             'lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto z-30',
             'w-full lg:w-auto bg-black lg:bg-transparent',

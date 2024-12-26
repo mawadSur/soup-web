@@ -116,7 +116,7 @@ export type AboutSection = {
 };
 
 export type GazaSupportSection = {
-  __component: SectionType.ABOUT;
+  __component: SectionType.GAZA_SUPPORT;
   id: number;
   gazaSupport: LayoutColumn;
 };
@@ -159,6 +159,19 @@ export type GalleryMasonrySection = {
   id: number;
   heading: string;
   gallery: LogoLink[];
+};
+
+export type InstagramMediaItem = {
+  id: string;
+  media_type: string;
+  media_url: string;
+  permalink: string;
+  timestamp: string;
+};
+
+export type InstagramPost = {
+  posts: InstagramMediaItem[];
+  next: string | null;
 };
 
 export enum IconType {
