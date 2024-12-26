@@ -4,9 +4,9 @@ import qs from 'qs';
 
 const baseUrl = process.env.BASE_URL;
 
-interface QueryParams {
+type QueryParams = {
   [key: string]: any;
-}
+};
 
 const buildUrl = (path: string, queryParams: QueryParams): string => {
   const query = qs.stringify(queryParams);

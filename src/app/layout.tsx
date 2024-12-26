@@ -1,4 +1,4 @@
-import { fetchGlobalData } from '@/api';
+import { fetchGlobalData } from '@/api/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';

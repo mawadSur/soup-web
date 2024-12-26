@@ -37,3 +37,15 @@ export function getTime(dateString: string): string {
   const date = new Date(dateString);
   return format(date, 'hh:mm a'); // Example: "03:50 PM"
 }
+
+export function debounce<T extends (...args: any[]) => void>(func: T, delay: number) {
+  let timeoutId: ReturnType<typeof setTimeout>;
+
+  return function (...args: Parameters<T>) {
+    if (timeoutId) clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+}

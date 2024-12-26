@@ -1,4 +1,4 @@
-import { fetchDynamicPage } from '@/api';
+import { fetchDynamicPage } from '@/api/strapi';
 import { SectionRenderer } from '@/components/section-renderer';
 import { SectionData } from '@/types';
 
