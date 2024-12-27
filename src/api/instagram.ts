@@ -1,5 +1,6 @@
 'use server';
-import { getImagePosts, processImagePost } from '@/lib/instagram';
+
+import { getImagePosts, processImagePost } from '@/lib/instagram/services/media-service';
 import { InstagramPost } from '@/types';
 
 export async function getInstagramFeed(limit?: number, next?: string): Promise<InstagramPost> {

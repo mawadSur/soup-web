@@ -1,10 +1,10 @@
-import { fetchDynamicPage } from '@/api/strapi';
+import { getDynamicPage } from '@/api/strapi';
 import { SectionRenderer } from '@/components/section-renderer';
 import { SectionData } from '@/types';
 
 export default async function Dynamic({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug;
-  const { data } = await fetchDynamicPage(slug);
+  const { data } = await getDynamicPage(slug);
 
   if (!data) return null;
 
