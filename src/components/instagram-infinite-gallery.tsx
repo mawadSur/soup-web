@@ -15,8 +15,8 @@ export default function InstagramInfiniteGallery({ data }: { data: InstagramPost
             <Image
               src={item.media_url}
               alt={item.id}
-              width={200}
-              height={200}
+              width={1000}
+              height={800}
               className="w-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
               placeholder="blur"
