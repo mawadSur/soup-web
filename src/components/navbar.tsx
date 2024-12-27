@@ -1,5 +1,5 @@
 'use client';
-import { useOutsideClick } from '@/hooks/useOutside';
+import { useOutsideClick } from '@/hooks/use-outside';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
