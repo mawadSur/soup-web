@@ -1,5 +1,5 @@
 'use client';
-import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
+import { useInfiniteScroll } from '@/hooks/use-infinite-scroll';
 import { InstagramPost } from '@/types';
 import Image from 'next/image';
 import { FadeLoader } from 'react-spinners';

@@ -1,5 +1,5 @@
 'use client';
-import { useOutsideClick } from '@/hooks/useOutside';
+import { useOutsideClick } from '@/hooks/use-outside';
 import { cn } from '@/lib/utils';
 import type { Navbar } from '@/types';
 import Image from 'next/image';
