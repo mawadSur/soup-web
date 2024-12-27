@@ -1,4 +1,4 @@
-import { fetchGlobalData } from '@/api/strapi';
+import { getGlobalData } from '@/api/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await fetchGlobalData();
+  const { data } = await getGlobalData();
 
   return {
     title: data.title,
@@ -25,7 +25,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { data } = await fetchGlobalData();
+  const { data } = await getGlobalData();
 
   if (!data) return null;
 
