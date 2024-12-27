@@ -161,7 +161,7 @@ export type GalleryMasonrySection = {
   gallery: LogoLink[];
 };
 
-export type InstagramMediaItem = {
+export type InstagramItem = {
   id: string;
   media_type: string;
   media_url: string;
@@ -170,7 +170,7 @@ export type InstagramMediaItem = {
 };
 
 export type InstagramPost = {
-  posts: InstagramMediaItem[];
+  posts: InstagramItem[];
   next: string | null;
 };
 
@@ -180,7 +180,7 @@ export enum IconType {
   SPONSORSHIP = 'Sponsorship',
 }
 
-export const enum SectionType {
+export enum SectionType {
   TOP_HERO = 'section.top-hero',
   GET_INVOLVED = 'section.get-involved',
   HERO = 'section.hero',
