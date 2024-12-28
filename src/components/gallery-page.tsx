@@ -1,10 +1,10 @@
 import { getInstagramFeed } from '@/api/instagram';
 import { BlurredBgComponent } from '@/components/blurred-bg';
-import InstagramInfiniteGallery from '@/components/instagram-infinite-gallery';
 import GazaSupportSection from '@/components/gaza-support-section';
+import InstagramInfiniteGallery from '@/components/instagram-infinite-gallery';
 import { SectionType } from '@/types';
 
-export default async function GalleryPage() {
+export const GalleryPage = async () => {
   const data = await getInstagramFeed();
 
   return (
@@ -59,4 +59,4 @@ export default async function GalleryPage() {
       />
     </>
   );
-}
+};
