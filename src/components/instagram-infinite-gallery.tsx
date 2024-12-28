@@ -11,13 +11,16 @@ export default function InstagramInfiniteGallery({ data }: { data: InstagramPost
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4 py-4">
         {posts.map((item: any) => (
-          <div ref={loaderRef} key={item.id} className="break-inside-avoid relative group">
+          <div
+            ref={loaderRef}
+            key={item.id}
+            className="relative overflow-hidden bg-cover bg-no-repeat rounded-lg w-full h-[400px]"
+          >
             <Image
               src={item.media_url}
               alt={item.id}
-              width={1000}
-              height={800}
-              className="w-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              fill
+              className="w-full object-cover transition duration-300 ease-in-out hover:scale-110"
               loading="lazy"
               placeholder="blur"
               blurDataURL={item.placeholder}
