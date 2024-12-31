@@ -11,11 +11,7 @@ export default function InstagramInfiniteGallery({ data }: { data: InstagramPost
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4 py-4">
         {posts.map((item: any) => (
-          <div
-            ref={loaderRef}
-            key={item.id}
-            className="relative overflow-hidden bg-cover bg-no-repeat rounded-lg w-full h-[400px]"
-          >
+          <div ref={loaderRef} key={item.id} className="relative overflow-hidden rounded-lg w-full h-[400px]">
             <Image
               src={item.media_url}
               alt={item.id}
