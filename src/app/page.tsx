@@ -1,11 +1,11 @@
-import { fetchLandingPage } from '@/api';
+import { getLandingPage } from '@/actions/strapi';
 import LatestDonations from '@/components/latest-donations';
 import { SectionRenderer } from '@/components/section-renderer';
 import Volunteer from '@/components/volunteer';
 import { SectionData } from '@/types';
 
 export default async function Home() {
-  const { data } = await fetchLandingPage();
+  const { data } = await getLandingPage();
 
   return (
     <>

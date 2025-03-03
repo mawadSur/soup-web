@@ -116,7 +116,7 @@ export type AboutSection = {
 };
 
 export type GazaSupportSection = {
-  __component: SectionType.ABOUT;
+  __component: SectionType.GAZA_SUPPORT;
   id: number;
   gazaSupport: LayoutColumn;
 };
@@ -161,13 +161,26 @@ export type GalleryMasonrySection = {
   gallery: LogoLink[];
 };
 
+export type InstagramItem = {
+  id: string;
+  media_type: string;
+  media_url: string;
+  permalink: string;
+  timestamp: string;
+};
+
+export type InstagramPost = {
+  posts: InstagramItem[];
+  next: string | null;
+};
+
 export enum IconType {
   DONATION = 'Donation',
   VOLUNTEER = 'Volunteer',
   SPONSORSHIP = 'Sponsorship',
 }
 
-export const enum SectionType {
+export enum SectionType {
   TOP_HERO = 'section.top-hero',
   GET_INVOLVED = 'section.get-involved',
   HERO = 'section.hero',

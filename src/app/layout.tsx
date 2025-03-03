@@ -1,6 +1,7 @@
-import { fetchGlobalData } from '@/api';
+import { getGlobalData } from '@/actions/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
+import { ViewTransitions } from 'next-view-transitions';
 import { Open_Sans } from 'next/font/google';
 import Navbar from '../components/navbar';
 import './globals.css';
@@ -12,7 +13,7 @@ const openSans = Open_Sans({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await fetchGlobalData();
+  const { data } = await getGlobalData();
 
   return {
     title: data.title,
@@ -25,16 +26,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { data } = await fetchGlobalData();
+  const { data } = await getGlobalData();
 
   if (!data) return null;
 
   return (
     <html lang="en">
       <body className={`${openSans} antialiased`}>
-        <Navbar navbar={data.navbar} />
-        {children}
-        <Footer footer={data.footer} />
+        <ViewTransitions>
+          <Navbar navbar={data.navbar} />
+          {children}
+          <Footer footer={data.footer} />
+        </ViewTransitions>
       </body>
     </html>
   );

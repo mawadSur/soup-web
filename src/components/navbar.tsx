@@ -1,9 +1,9 @@
 'use client';
-import { useOutsideClick } from '@/hooks/useOutside';
+import { useOutsideClick } from '@/hooks/use-outside';
 import { cn } from '@/lib/utils';
 import type { Navbar } from '@/types';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
@@ -58,7 +58,6 @@ export default function Navbar({ navbar }: { navbar: Navbar }) {
         <div
           id="primary-navigation"
           role="navigation"
-          aria-hidden={!isMenuOpen}
           className={cn(
             'lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto z-30',
             'w-full lg:w-auto bg-black lg:bg-transparent',

@@ -1,7 +1,7 @@
 import { getDate, getTime } from '@/lib/utils';
 import { EventSection } from '@/types';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { BsClock, BsMap } from 'react-icons/bs';
 
 export default function LatestEvent({ data }: { data: EventSection }) {
@@ -35,10 +35,10 @@ export default function LatestEvent({ data }: { data: EventSection }) {
                   </h3>
                   <div className="flex items-center gap-2 text-black/50 text-xs font-light mb-2">
                     <p className="flex items-center gap-1">
-                      <BsMap className="text-color1" aria-label="Location:" role="icon" /> {getTime(event.time)}
+                      <BsMap className="text-color1" aria-label="Location:" role="icon" /> {event.location}
                     </p>
                     <p className="flex items-center gap-1">
-                      <BsClock className="text-color1" aria-label="Time:" role="icon" /> {event.location}
+                      <BsClock className="text-color1" aria-label="Time:" role="icon" /> {getTime(event.time)}
                     </p>
                   </div>
                   <p className="text-black/70 text-sm mb-4 line-clamp-2">{event.paragraph}</p>

@@ -1,5 +1,5 @@
 import { SocialIcons, type Footer } from '@/types';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import React from 'react';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';

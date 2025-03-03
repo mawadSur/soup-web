@@ -14,7 +14,6 @@ export default function About({ data }: { data: AboutSection }) {
         paragraph={about.paragraph}
         imageWidth={about.image.width!}
         imageHeight={about.image.height!}
-        reverseOrder={about.isReverse}
       />
     </section>
   );

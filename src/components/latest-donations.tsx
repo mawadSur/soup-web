@@ -1,7 +1,7 @@
 import { DONATION_URL, LATEST_DONATIONS } from '@/constant';
 import { formatNumber, formatRelativeTime } from '@/lib/utils';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 
 export default function LatestDonations() {
   return (

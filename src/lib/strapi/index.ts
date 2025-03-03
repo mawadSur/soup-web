@@ -1,21 +1,20 @@
-import { fetchData } from '@/lib/fetch';
 import { SectionType } from '@/types';
 import qs from 'qs';
 
 const baseUrl = process.env.BASE_URL;
 
-interface QueryParams {
+type QueryParams = {
   [key: string]: any;
-}
+};
 
-const buildUrl = (path: string, queryParams: QueryParams): string => {
+export const buildUrl = (path: string, queryParams: QueryParams): string => {
   const query = qs.stringify(queryParams);
   const url = new URL(path, baseUrl);
   url.search = query;
   return url.href;
 };
 
-const globalQueryParams = {
+export const globalQueryParams = {
   populate: {
     navbar: {
       populate: {
@@ -44,7 +43,7 @@ const globalQueryParams = {
   },
 };
 
-const landingPageQueryParams = {
+export const landingPageQueryParams = {
   populate: {
     sections: {
       on: {
@@ -180,19 +179,4 @@ const landingPageQueryParams = {
       },
     },
   },
-};
-
-export const fetchGlobalData = async () => {
-  const url = buildUrl('global', globalQueryParams);
-  return await fetchData(url);
-};
-
-export const fetchLandingPage = async () => {
-  const url = buildUrl('landing-page', landingPageQueryParams);
-  return await fetchData(url);
-};
-
-export const fetchDynamicPage = async (slug: string) => {
-  const url = buildUrl(slug, landingPageQueryParams);
-  return await fetchData(url);
 };
