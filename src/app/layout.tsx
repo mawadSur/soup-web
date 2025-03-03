@@ -1,7 +1,6 @@
-import { getGlobalData } from '@/api/strapi';
+import { getGlobalData } from '@/actions/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
 import { ViewTransitions } from 'next-view-transitions';
 import { Yeseva_One } from 'next/font/google';
 import Navbar from '../components/navbar';

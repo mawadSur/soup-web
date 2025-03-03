@@ -1,7 +1,7 @@
 import { getDate, getTime } from '@/lib/utils';
 import { EventSection } from '@/types';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { BsClock, BsMap } from 'react-icons/bs';
 
 export default function LatestEvent({ data }: { data: EventSection }) {
