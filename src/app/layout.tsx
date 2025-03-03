@@ -1,6 +1,7 @@
-import { getGlobalData } from '@/api/strapi';
+import { getGlobalData } from '@/actions/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
+import { ViewTransitions } from 'next-view-transitions';
 import { Open_Sans } from 'next/font/google';
 import Navbar from '../components/navbar';
 import './globals.css';
@@ -32,9 +33,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans} antialiased`}>
-        <Navbar navbar={data.navbar} />
-        {children}
-        <Footer footer={data.footer} />
+        <ViewTransitions>
+          <Navbar navbar={data.navbar} />
+          {children}
+          <Footer footer={data.footer} />
+        </ViewTransitions>
       </body>
     </html>
   );

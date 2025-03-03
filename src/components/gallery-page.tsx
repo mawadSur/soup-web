@@ -1,4 +1,4 @@
-import { getInstagramFeed } from '@/api/instagram';
+import { getInstagramFeed } from '@/actions/instagram';
 import { BlurredBgComponent } from '@/components/blurred-bg';
 import GazaSupportSection from '@/components/gaza-support-section';
 import InstagramInfiniteGallery from '@/components/instagram-infinite-gallery';

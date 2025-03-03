@@ -1,4 +1,4 @@
-import { getInstagramFeed } from '@/api/instagram';
+import { getInstagramFeed } from '@/actions/instagram';
 import { DEFAULT_FETCH_LIMIT, INTERSECTION_THRESHOLD } from '@/constant';
 import { debounce } from '@/lib/utils';
 import { InstagramPost } from '@/types';
