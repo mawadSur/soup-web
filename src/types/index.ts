@@ -128,7 +128,7 @@ export type HelpSection = {
   help: Card[];
 };
 
-export type MediaSection = {
+export type About = {
   __component: SectionType.MEDIA;
   id: number;
   medias: LogoLink[];
@@ -189,7 +189,7 @@ export type SectionData =
   | HeroSection
   | GetInvolvedSection
   | AboutSection
-  | MediaSection
+  | About
   | GallerySection
   | GalleryMasonrySection
   | EventSection

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 
@@ -77,5 +78,5 @@ export default function Counter({
     return () => unsubscribe();
   }, [springValue, format]);
 
-  return <span ref={ref} className={cn('text-6xl font-light text-black', className)} aria-live="polite" role="status" />;
+  return <span ref={ref} className={cn('text-3xl', className)} aria-live="polite" role="status" />;
 }

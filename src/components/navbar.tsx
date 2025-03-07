@@ -1,106 +1,193 @@
 'use client';
 import { useOutsideClick } from '@/hooks/useOutside';
 import { cn } from '@/lib/utils';
-import type { Navbar } from '@/types';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React from 'react';
-import { FaBars } from 'react-icons/fa';
+import { useEffect, useRef, useState } from 'react';
 
-export default function Navbar({ navbar }: { navbar: Navbar }) {
-  const pathName = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const navRef = React.useRef<HTMLDivElement>(null);
+const NAV_ITEMS = [
+  { label: 'Home', link: '/' },
+  { label: 'About', link: '/about' },
+  { label: 'Gallery', link: '/gallery' },
+  { label: 'Media', link: '/media' },
+  { label: 'Contact', link: '/contact' },
+];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+const menuVariants = {
+  closed: { opacity: 0, height: 0, transformOrigin: 'top center' },
+  open: {
+    opacity: 1,
+    height: 'auto',
+    transition: {
+      opacity: { duration: 0.3 },
+      height: { duration: 0.4, ease: 'easeOut' },
+      staggerChildren: 0.07,
+      delayChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      opacity: { duration: 0.2 },
+      height: { duration: 0.3, ease: 'easeIn' },
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      when: 'afterChildren',
+    },
+  },
+};
 
-  useOutsideClick(navRef, () => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
+const itemVariants = {
+  closed: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+  open: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+};
+
+export default function NavbarComponent() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navRef = useRef(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
+
+  useOutsideClick(navRef, (event) => {
+    if (mobileMenuOpen && menuButtonRef.current && !menuButtonRef.current.contains(event.target as Node)) {
+      setMobileMenuOpen(false);
     }
   });
 
-  React.useEffect(() => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
-  }, [pathName]);
+  const handleNavigation = () => setMobileMenuOpen(false);
 
   return (
-    <nav ref={navRef} className="w-full bg-black text-white z-50">
-      <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 py-3 flex justify-between items-center">
-        <Link href={navbar.logoLink.href} className="text-xl font-bold flex items-center gap-4">
-          <Image
-            src={`/${navbar.logoLink.image.name}`}
-            alt={navbar.logoLink.image.alternativeText}
-            width={50}
-            height={50}
-          />
-          <p className="hidden lg:block uppercase">{navbar.logoLink.label}</p>
-        </Link>
+    <header className="fixed top-0 left-0 right-0 w-full z-20">
+      <div
+        id="sticky-header"
+        className={cn('absolute bg-[rgb(60,199,143)] transition-all duration-500 ease-in-out rounded-lg py-4 px-9', {
+          'left-0 right-0 top-0': isScrolled,
+          'left-1 right-1 top-1 sm:left-2 sm:right-2 sm:top-2 md:left-4 md:right-4 md:top-3 lg:left-24 lg:right-24 lg:top-16':
+            !isScrolled,
+        })}
+      >
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between">
+            <div className="logo">
+              <Link href="/" onClick={handleNavigation}>
+                <Image
+                  src="/gazasoup-logo.webp"
+                  alt="Gaza Soup Logo"
+                  width={isScrolled ? 70 : 80}
+                  height={isScrolled ? 70 : 80}
+                  className="transition-all duration-500 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
+                />
+              </Link>
+            </div>
 
-        <button
-          onClick={toggleMenu}
-          className="lg:hidden flex items-center gap-2"
-          aria-label="Toggle navigation"
-          aria-expanded={isMenuOpen}
-          aria-controls="primary-navigation"
-        >
-          <span className="text-xl text-white">
-            <FaBars />
-          </span>
-          MENU
-        </button>
-
-        <div
-          id="primary-navigation"
-          role="navigation"
-          aria-hidden={!isMenuOpen}
-          className={cn(
-            'lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto z-30',
-            'w-full lg:w-auto bg-black lg:bg-transparent',
-            'transition-all duration-300 ease-in-out overflow-hidden',
-            'lg:opacity-100',
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 xl:opacity-100 lg:max-h-screen',
-          )}
-        >
-          <ul
-            className={cn(
-              'flex flex-col lg:flex-row items-start lg:items-center',
-              'space-y-2 lg:space-y-0 lg:space-x-4 p-4 lg:p-0',
-              'transition-all duration-300 ease-in-out',
-            )}
-          >
-            {navbar.link.map((item, index) => (
-              <li
-                key={item.href}
-                className={cn(
-                  'transform transition-transform duration-300 ease-in-out lg:transform-none',
-                  isMenuOpen ? `translate-x-0` : '-translate-x-5',
-                )}
-                style={{
-                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
-                }}
+            <div className="hidden lg:flex items-center">
+              <nav className="mr-6">
+                <ul className="flex space-x-3 xl:space-x-6 text-gray-800 text-base xl:text-lg">
+                  {NAV_ITEMS.map((item) => (
+                    <li
+                      key={item.label}
+                      className="text-gray-800 hover:text-white font-semibold font-sans transition duration-300 ease-in-out"
+                    >
+                      <Link href={item.link}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <Link
+                href="https://givebutter.com/gaza-soup-kitchen"
+                target="_blank"
+                className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
               >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'block py-2 lg:py-0 transition-colors duration-300 font-medium',
-                    item.href === pathName
-                      ? 'text-red-300 font-bold'
-                      : 'hover:text-red-300 text-white focus:text-red-300',
+                Make a Donation
+              </Link>
+            </div>
+
+            <div className="lg:hidden">
+              <button
+                ref={menuButtonRef}
+                onClick={toggleMobileMenu}
+                className="text-gray-800 focus:outline-none p-2"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  {mobileMenuOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <X className="w-6 h-6" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ opacity: 0, rotate: 90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: -90 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Menu className="w-6 h-6" />
+                    </motion.div>
                   )}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                </AnimatePresence>
+              </button>
+            </div>
+          </div>
+
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                ref={navRef}
+                variants={menuVariants}
+                initial="closed"
+                animate="open"
+                exit="exit"
+                className="lg:hidden overflow-hidden"
+              >
+                <ul className="flex flex-col space-y-4 text-gray-800 text-lg mt-4 pb-4">
+                  {NAV_ITEMS.map((item) => (
+                    <motion.li
+                      key={item.label}
+                      variants={itemVariants}
+                      className="text-gray-800 hover:text-white font-semibold font-sans transition duration-300 ease-in-out"
+                    >
+                      <Link href={item.link} onClick={handleNavigation}>
+                        {item.label}
+                      </Link>
+                    </motion.li>
+                  ))}
+                  <motion.li className="pt-2" variants={itemVariants}>
+                    <Link
+                      href="https://givebutter.com/gaza-soup-kitchen"
+                      target="_blank"
+                      onClick={handleNavigation}
+                      className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
+                    >
+                      Make a Donation
+                    </Link>
+                  </motion.li>
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-    </nav>
+
+      <div className={cn('h-16 sm:h-20 md:h-24 lg:h-32', isScrolled ? 'h-16 sm:h-16 md:h-20 lg:h-24' : '')}></div>
+    </header>
   );
 }

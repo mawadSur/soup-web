@@ -1,16 +1,15 @@
-import About from '@/components/about';
+import Media from '@/components/media';
 import { BlurredBgComponent } from '@/components/blurred-bg';
 import Gallery from '@/components/gallery';
 import GalleryMasonrySection from '@/components/gallery-masonry-section';
 import GazaSupportSection from '@/components/gaza-support-section';
 import GetInvolved from '@/components/get-involved';
 import HelpSection from '@/components/help-section';
-import Hero from '@/components/hero';
-import LatestDonations from '@/components/latest-donations';
+import Latest from '@/components/latest';
 import LatestEvent from '@/components/latest-event';
-import MediaSection from '@/components/media-section';
+import About from '@/components/about';
 import MerchSection from '@/components/merch-section';
-import TopHero from '@/components/top-hero';
+import Hero from '@/components/hero';
 import Volunteer from '@/components/volunteer';
 import { IconType, SectionType } from '@/types';
 import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from 'react-icons/lia';
@@ -55,17 +54,16 @@ export const iconMap = {
 };
 
 export const componentMap = {
-  [SectionType.TOP_HERO]: TopHero,
+  [SectionType.TOP_HERO]: Hero,
   [SectionType.GET_INVOLVED]: GetInvolved,
-  [SectionType.HERO]: Hero,
-  [SectionType.ABOUT]: About,
-  [SectionType.MEDIA]: MediaSection,
+  [SectionType.HERO]: Latest,
+  [SectionType.ABOUT]: Media,
+  [SectionType.MEDIA]: About,
   [SectionType.HELP]: HelpSection,
   [SectionType.MERCH]: MerchSection,
   [SectionType.GALLERY_MASONRY]: GalleryMasonrySection,
   [SectionType.GAZA_SUPPORT]: GazaSupportSection,
   [SectionType.BLUR_BACKGROUND]: BlurredBgComponent,
-  [SectionType.LATEST_DONATIONS]: LatestDonations,
   [SectionType.GALLERY]: Gallery,
   [SectionType.EVENT]: LatestEvent,
   [SectionType.VOLUNTEER]: Volunteer,

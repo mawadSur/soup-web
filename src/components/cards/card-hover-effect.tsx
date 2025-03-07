@@ -1,7 +1,7 @@
 import { LogoLink } from '@/types';
 import Image from 'next/image';
 
-export function CardHoverEffect({ media }: { media: LogoLink }) {
+export function CardHoverEffect({ media }: { media: any }) {
   return (
     <div className="w-full group/card">
       <a

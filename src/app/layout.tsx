@@ -2,21 +2,23 @@ import { fetchGlobalData } from '@/api';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import { ViewTransitions } from 'next-view-transitions';
+import { Yeseva_One } from 'next/font/google';
 import Navbar from '../components/navbar';
 import './globals.css';
 
-const openSans = Open_Sans({
-  weight: ['300', '400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
+const yesevaOne = Yeseva_One({
+  weight: ['400'],
   subsets: ['latin'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await fetchGlobalData();
+  // const { data } = await getGlobalData();
 
   return {
-    title: data.title,
-    description: data.description,
+    title: 'Gaza Soup Kitchen',
+    description:
+      "Our goal is clear: to ensure no one in Gaza goes to bed hungry. This is more than just an initiative, it's a personal vow. Don't wait, donate to Palestine Now.",
   };
 }
 
@@ -25,16 +27,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { data } = await fetchGlobalData();
+  // const { data } = await getGlobalData();
 
-  if (!data) return null;
+  // if (!data) return null;
 
   return (
     <html lang="en">
-      <body className={`${openSans} antialiased`}>
-        <Navbar navbar={data.navbar} />
-        {children}
-        <Footer footer={data.footer} />
+      <body className={`${yesevaOne.className} antialiased`}>
+        <ViewTransitions>
+          <Navbar />
+          {children}
+          <Footer />
+        </ViewTransitions>
       </body>
     </html>
   );

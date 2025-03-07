@@ -1,19 +1,16 @@
-import type { BackgroundImage } from '@/types';
 import Image from 'next/image';
 
-export default function MerchSection({ data }: { data: BackgroundImage }) {
-  const { image, href } = data.backgroundImage;
-
+export default function MerchSection() {
+  // { data }: { data: BackgroundImage }
   return (
-    <section className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 pb-10 sm:pb-10 lg:pb-24">
-      <a target="_blank" rel="noopener noreferrer" href={href} className="block w-full">
-        <Image
-          src={'/' + image.name}
-          alt={image.alternativeText}
-          width={image.width}
-          height={image.height}
-          loading="lazy"
-        />
+    <section className="px-4 mx-auto max-w-7xl">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://donatestock.com/gaza-soup-kitchen"
+        className="block w-full"
+      >
+        <Image src="/merch.webp" alt="Merch" width={1500} height={1500} loading="lazy" />
       </a>
     </section>
   );
