@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { label: 'About', link: '/about' },
   { label: 'Gallery', link: '/gallery' },
   { label: 'Media', link: '/media' },
-  { label: 'Contact', link: '/contact' },
+  { label: 'Donation', link: '/donation' },
 ];
 
 const menuVariants = {
@@ -98,7 +98,7 @@ export default function NavbarComponent() {
                   {NAV_ITEMS.map((item) => (
                     <li
                       key={item.label}
-                      className="text-gray-800 hover:text-white font-semibold font-sans transition duration-300 ease-in-out"
+                      className="hover:text-black text-white font-semibold font-sans transition duration-300 ease-in-out"
                     >
                       <Link href={item.link}>{item.label}</Link>
                     </li>
@@ -163,7 +163,7 @@ export default function NavbarComponent() {
                     <motion.li
                       key={item.label}
                       variants={itemVariants}
-                      className="text-gray-800 hover:text-white font-semibold font-sans transition duration-300 ease-in-out"
+                      className="hover:text-black text-white font-semibold font-sans transition duration-300 ease-in-out"
                     >
                       <Link href={item.link} onClick={handleNavigation}>
                         {item.label}

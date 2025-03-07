@@ -1,8 +1,7 @@
-import { SectionTopHero } from '@/types';
 import Link from 'next/link';
 
 export default function Hero() {
-// { data }: { data: SectionTopHero }
+  // { data }: { data: SectionTopHero }
   return (
     <section className="h-[742px] mt-24 sm:mt-30 md:mt-36 lg:mt-32 relative">
       <div
@@ -17,13 +16,11 @@ export default function Hero() {
                 <span className="capitalize text-4xl md:text-5xl text-white font-semibold font-sans drop-shadow-lg animate-pulse-slow">
                   Get Started Today.
                 </span>
-                <h3 className="text-white font-bold font-sans text-7xl md:text-8xl mt-2 mb-3 leading-none drop-shadow-xl">
+                <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-3 leading-tight drop-shadow-xl">
                   Help the Children When They Need
                 </h3>
-                <p className="mt-2 mb-10 text-white text-xl md:text-2xl font-semibold font-sans drop-shadow-md">
-                  With so much to consume and such little time, coming up
-                  <br />
-                  with relevant title ideas is essential
+                <p className="mt-2 mb-6 sm:mb-10 text-white text-lg sm:text-xl md:text-2xl font-semibold font-sans drop-shadow-md max-w-3xl">
+                  With so much to consume and such little time, coming up with relevant title ideas is essential
                 </p>
                 <Link
                   href="https://givebutter.com/gaza-soup-kitchen"
