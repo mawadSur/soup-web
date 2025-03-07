@@ -1,9 +1,8 @@
-import type { About } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function About() {
-// { data }: { data: About }
+  // { data }: { data: About }
   return (
     <section className="bg-[rgba(60,199,143,0.06)] relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,7 +22,7 @@ export default function About() {
               <Link
                 href="#"
                 target="_blank"
-                className="inline-block bg-[#3CC78F] text-[#333333] py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
+                className="inline-block bg-[#2A8C61] text-white py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
               >
                 Learn More
               </Link>

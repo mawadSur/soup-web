@@ -29,7 +29,7 @@ export default function GazaAid() {
               <Link
                 href="https://givebutter.com/gaza-soup-kitchen"
                 target="_blank"
-                className="inline-block bg-[#3CC78F] text-[#333333] py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
+                className="inline-block bg-[#2A8C61] text-white py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
               >
                 Donate Now
               </Link>

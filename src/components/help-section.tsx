@@ -1,6 +1,5 @@
 'use client';
 
-import type { HelpSection } from '@/types';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -9,7 +8,7 @@ const CARDS = [
   {
     id: 1,
     title: 'A RECIPE FOR RESILIENCE',
-    image: '/food1.webp',
+    image: '/help-1.webp',
     alt: 'Served meals',
     description:
       "This isn't just a soup — it's a recipe for resilience, simmering on the stoves of Gaza, feeding bodies and souls alike. Each bowl serves not just sustenance but a steadfast vow: to fortify, to nourish, to endure.",
@@ -17,7 +16,7 @@ const CARDS = [
   {
     id: 2,
     title: 'HANDS UNITED IN SERVICE',
-    image: '/food2.webp',
+    image: '/help-2.webp',
     alt: 'Donation',
     description:
       'Amidst the steam of hearty soups, we find the warmth of shared hope. Every ladleful carries the spirit of community and the promise of sustenance for the children of Gaza.',
@@ -25,7 +24,7 @@ const CARDS = [
   {
     id: 3,
     title: 'THE WARMTH OF SHARED HOPE',
-    image: '/food3.webp',
+    image: '/help-3.webp',
     alt: 'Be a volunteer',
     description:
       'In the quiet corners of resilience, even the smallest hands come together to lift more than just a meal — they raise the foundation of tomorrow on the strength of solidarity.',
@@ -33,7 +32,7 @@ const CARDS = [
   {
     id: 4,
     title: 'Nurturing Community',
-    image: '/food4.webp',
+    image: '/help-4.webp',
     alt: 'Nurturing Community',
     description:
       'This is where hope simmers, where every serving is a pledge of solidarity. Here, we do not just feed the hungry, we nurture the soul of Gaza, one pot, one person, one community at a time.',
@@ -41,7 +40,6 @@ const CARDS = [
 ];
 
 export default function HelpSection() {
-// { data }: { data: HelpSection }
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -70,7 +68,7 @@ export default function HelpSection() {
           </h2>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {CARDS.map((card) => (
           <div key={card.id} className="relative mb-20">
             <div className="mr-20 pb-20">
@@ -80,7 +78,7 @@ export default function HelpSection() {
                   alt={card.alt}
                   width={400}
                   height={400}
-                  className="w-full h-72 sm:h-80 md:h-96 rounded-[9px] object-cover transition-transform duration-300 transform hover:scale-105 cursor-pointer"
+                  className="w-full h-64 sm:h-72 md:h-80 rounded-[9px] object-cover transition-transform duration-300 transform hover:scale-105 cursor-pointer"
                   onClick={() => {
                     setSelectedImage(card.image);
                     setIsModalOpen(true);
@@ -88,7 +86,7 @@ export default function HelpSection() {
                 />
               </div>
             </div>
-            <div className="absolute bottom-0 right-0 bg-white rounded-[7px] shadow-md p-[33px] pl-[40px] pr-[40px] w-5/6 min-h-72 sm:min-h-80 md:min-h-96 flex flex-col">
+            <div className="absolute bottom-0 right-0 bg-white rounded-[7px] shadow-md p-6 w-4/5 min-h-48 flex flex-col">
               <h3 className="text-base sm:text-lg text-[#191d34] font-bold font-sans">{card.title}</h3>
               <p className="text-[#191d34] mt-2 text-sm sm:text-base flex-1 font-sans">{card.description}</p>
             </div>
@@ -109,13 +107,14 @@ export default function HelpSection() {
               height={600}
               className="max-w-full max-h-[80vh] object-contain"
             />
-            <button
-              className="absolute top-6 right-6 text-white bg-black bg-opacity-50 p-2 rounded-full"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <X size={24} />
-            </button>
           </div>
+
+          <button
+            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <X size={24} />
+          </button>
         </div>
       )}
     </section>
