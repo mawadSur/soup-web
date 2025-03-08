@@ -1,6 +1,7 @@
 import { getDynamicPage } from '@/actions/strapi';
 import DonatePage from '@/components/donate-page';
 import { GalleryPage } from '@/components/gallery-page';
+import MediaPage from '@/components/media-page';
 import { SectionRenderer } from '@/components/section-renderer';
 import { SectionData } from '@/types';
 
@@ -11,8 +12,12 @@ export default async function Dynamic({ params }: { params: Promise<{ slug: stri
     return <GalleryPage />;
   }
 
-  if (slug === 'donate') {
+  if (slug === 'donation') {
     return <DonatePage />;
+  }
+
+  if (slug === 'media') {
+    return <MediaPage />;
   }
 
   const { data } = await getDynamicPage(slug);

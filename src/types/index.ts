@@ -1,17 +1,3 @@
-export type ColumnLayoutProps = {
-  imageSrc: string;
-  imageAlt: string;
-  headline: string;
-  paragraph: string;
-  imageWidth: number;
-  imageHeight: number;
-  className?: string;
-  reverseOrder?: boolean;
-  href?: string;
-  ariaLabel?: string;
-  label?: string;
-};
-
 export enum SocialIcons {
   FACEBOOK = 'facebook',
   INSTAGRAM = 'instagram',
@@ -115,12 +101,6 @@ export type AboutSection = {
   about: LayoutColumn;
 };
 
-export type GazaSupportSection = {
-  __component: SectionType.GAZA_SUPPORT;
-  id: number;
-  gazaSupport: LayoutColumn;
-};
-
 export type HelpSection = {
   __component: SectionType.HELP;
   id: number;
@@ -132,19 +112,6 @@ export type About = {
   __component: SectionType.MEDIA;
   id: number;
   medias: LogoLink[];
-};
-
-export type BackgroundImage = {
-  __component: SectionType.MERCH | SectionType.BLUR_BACKGROUND;
-  id: number;
-  backgroundImage: LogoLink;
-};
-
-export type EventSection = {
-  __component: SectionType.EVENT;
-  id: number;
-  heading: string;
-  events: Card[];
 };
 
 export type GallerySection = {
@@ -161,13 +128,13 @@ export type GalleryMasonrySection = {
   gallery: LogoLink[];
 };
 
-export type InstagramItem = {
+export interface InstagramItem {
   id: string;
-  media_type: string;
+  media_type: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM';
   media_url: string;
-  permalink: string;
-  timestamp: string;
-};
+  thumbnail_url?: string;
+  placeholder?: string;
+}
 
 export type InstagramPost = {
   posts: InstagramItem[];
@@ -184,17 +151,12 @@ export enum SectionType {
   TOP_HERO = 'section.top-hero',
   GET_INVOLVED = 'section.get-involved',
   HERO = 'section.hero',
-  BLUR_BACKGROUND = 'section.blur-background',
   HELP = 'section.help',
   GALLERY_MASONRY = 'section.gallery-masonry',
   MERCH = 'section.merch',
   ABOUT = 'section.about',
   MEDIA = 'section.media',
-  LATEST_DONATIONS = 'section.latest-donations',
   GALLERY = 'section.gallery',
-  EVENT = 'section.event',
-  VOLUNTEER = 'section.volunteer',
-  GAZA_SUPPORT = 'section.gaza-support',
 }
 
 export type SectionData =
@@ -205,7 +167,4 @@ export type SectionData =
   | About
   | GallerySection
   | GalleryMasonrySection
-  | EventSection
-  | BackgroundImage
-  | HelpSection
-  | GazaSupportSection;
+  | HelpSection;

@@ -1,7 +1,8 @@
 import { GetInvolvedSection } from '@/types';
-import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import Counter from './number-counter';
+import { DONATION_URL } from '@/constant';
+import { Button } from './button';
 
 const CARDS = [
   {
@@ -71,14 +72,15 @@ export default function GetInvolved() {
                 )}
               </p>
               <div className="group cursor-pointer mt-4">
-                <Link
-                  href="https://givebutter.com/gaza-soup-kitchen"
+                <Button
+                  as="a"
+                  href={DONATION_URL}
                   target="_blank"
                   className="text-[#191d34] text-base sm:text-lg font-bold font-sans relative inline-block pl-[68px] hover:text-[#2A8C61] transition-colors duration-300 ease-in-out"
                 >
-                  <span className="absolute left-0 top-1/2 w-[36px] h-[2px] bg-[#707070] group-hover:bg-[#2A8C61] group-hover:w-[50px] transition-all duration-300 ease-in-out transform -translate-y-1/2"></span>
-                  Donate Now
-                </Link>
+                  <span className="absolute left-0 top-1/2 w-[36px] h-[2px] bg-[#707070] group-hover:bg-[#2A8C61] group-hover:w-[50px] transition-all duration-300 ease-in-out transform -translate-y-1/2" />
+                  Support Us
+                </Button>
               </div>
             </div>
           </div>

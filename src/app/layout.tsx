@@ -5,6 +5,7 @@ import { ViewTransitions } from 'next-view-transitions';
 import { Yeseva_One } from 'next/font/google';
 import Navbar from '../components/navbar';
 import './globals.css';
+import Hero from '@/components/hero';
 
 const yesevaOne = Yeseva_One({
   weight: ['400'],
@@ -35,6 +36,7 @@ export default async function RootLayout({
       <body className={`${yesevaOne.className} antialiased`}>
         <ViewTransitions>
           <Navbar />
+          <Hero />
           {children}
           <Footer />
         </ViewTransitions>
