@@ -1,4 +1,3 @@
-import { AboutSection } from '@/types';
 import { CardHoverEffect } from './cards/card-hover-effect';
 
 const MEDIA_DATA = [
@@ -38,7 +37,7 @@ const MEDIA_DATA = [
 ];
 
 export default function Media() {
-// { data }: { data: AboutSection }
+  // { data }: { data: AboutSection }
   return (
     <section className="px-4 mx-auto max-w-7xl py-10 lg:py-24">
       <div className="flex flex-col md:flex-row gap-2">

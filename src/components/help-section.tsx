@@ -1,8 +1,9 @@
 'use client';
 
-import { X } from 'lucide-react';
+import { useImageModal } from '@/hooks/use-image-modal';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
 
 const CARDS = [
   {
@@ -40,23 +41,7 @@ const CARDS = [
 ];
 
 export default function HelpSection() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsModalOpen(false);
-      }
-    };
-    if (isModalOpen) {
-      window.addEventListener('keydown', handleEscape);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleEscape);
-    };
-  }, [isModalOpen]);
+  const { selectedImage, openModal, closeModal } = useImageModal();
 
   return (
     <section className="px-4 mx-auto max-w-7xl py-10 lg:py-24">
@@ -73,50 +58,75 @@ export default function HelpSection() {
           <div key={card.id} className="relative mb-20">
             <div className="mr-20 pb-20">
               <div className="overflow-hidden rounded-lg">
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  width={400}
-                  height={400}
-                  className="w-full h-64 sm:h-72 md:h-80 rounded-[9px] object-cover transition-transform duration-300 transform hover:scale-105 cursor-pointer"
-                  onClick={() => {
-                    setSelectedImage(card.image);
-                    setIsModalOpen(true);
-                  }}
-                />
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    width={400}
+                    height={400}
+                    className="w-full h-64 sm:h-72 md:h-80 rounded-[9px] object-cover cursor-pointer"
+                    onClick={() => openModal(card.image)}
+                  />
+                </motion.div>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0 bg-white rounded-[7px] shadow-md p-6 w-4/5 min-h-48 flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="absolute bottom-0 right-0 bg-white rounded-[7px] shadow-md p-6 w-4/5 min-h-48 flex flex-col"
+            >
               <h3 className="text-base sm:text-lg text-[#191d34] font-bold font-sans">{card.title}</h3>
               <p className="text-[#191d34] mt-2 text-sm sm:text-base flex-1 font-sans">{card.description}</p>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
 
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div className="relative max-w-full max-h-[80vh] p-4" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={selectedImage!}
-              alt="Enlarged view"
-              width={800}
-              height={600}
-              className="max-w-full max-h-[80vh] object-contain"
-            />
-          </div>
-
-          <button
-            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
-            onClick={() => setIsModalOpen(false)}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={closeModal}
           >
-            <X size={24} />
-          </button>
-        </div>
-      )}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="relative max-w-full max-h-[80vh] p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage!}
+                alt="Enlarged view"
+                width={800}
+                height={600}
+                className="max-w-full max-h-[80vh] object-contain"
+              />
+            </motion.div>
+
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeModal();
+              }}
+            >
+              <IoMdClose size={24} />
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -1,11 +1,13 @@
 'use client';
+import { DONATION_URL } from '@/constant';
 import { useOutsideClick } from '@/hooks/use-outside';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { Button } from './button';
 
 const NAV_ITEMS = [
   { label: 'Home', link: '/' },
@@ -81,7 +83,7 @@ export default function NavbarComponent() {
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             <div className="logo">
-              <Link href="/" onClick={handleNavigation}>
+              <Button href="/" onClick={handleNavigation}>
                 <Image
                   src="/gazasoup-logo.webp"
                   alt="Gaza Soup Logo"
@@ -89,7 +91,7 @@ export default function NavbarComponent() {
                   height={isScrolled ? 70 : 80}
                   className="transition-all duration-500 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
                 />
-              </Link>
+              </Button>
             </div>
 
             <div className="hidden lg:flex items-center">
@@ -100,18 +102,19 @@ export default function NavbarComponent() {
                       key={item.label}
                       className="hover:text-black text-white font-semibold font-sans transition duration-300 ease-in-out"
                     >
-                      <Link href={item.link}>{item.label}</Link>
+                      <Button href={item.link}>{item.label}</Button>
                     </li>
                   ))}
                 </ul>
               </nav>
-              <Link
-                href="https://givebutter.com/gaza-soup-kitchen"
+              <Button
+                as="a"
+                href={DONATION_URL}
                 target="_blank"
                 className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
               >
                 Make a Donation
-              </Link>
+              </Button>
             </div>
 
             <div className="lg:hidden">
@@ -130,7 +133,7 @@ export default function NavbarComponent() {
                       exit={{ opacity: 0, rotate: 90 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <X className="w-6 h-6" />
+                      <IoMdClose className="w-6 h-6" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -140,7 +143,7 @@ export default function NavbarComponent() {
                       exit={{ opacity: 0, rotate: -90 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Menu className="w-6 h-6" />
+                      <RxHamburgerMenu className="w-6 h-6" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -165,20 +168,20 @@ export default function NavbarComponent() {
                       variants={itemVariants}
                       className="hover:text-black text-white font-semibold font-sans transition duration-300 ease-in-out"
                     >
-                      <Link href={item.link} onClick={handleNavigation}>
+                      <Button href={item.link} onClick={handleNavigation}>
                         {item.label}
-                      </Link>
+                      </Button>
                     </motion.li>
                   ))}
                   <motion.li className="pt-2" variants={itemVariants}>
-                    <Link
-                      href="https://givebutter.com/gaza-soup-kitchen"
+                    <Button
+                      as="a"
+                      href={DONATION_URL}
                       target="_blank"
-                      onClick={handleNavigation}
                       className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
                     >
                       Make a Donation
-                    </Link>
+                    </Button>
                   </motion.li>
                 </ul>
               </motion.div>

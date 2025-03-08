@@ -1,8 +1,8 @@
 import { SocialIcons, type Footer } from '@/types';
-import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';
+import { Button } from './button';
 
 const NAV_ITEMS = [
   { label: 'Home', link: '/' },
@@ -35,9 +35,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 border-b border-[#3CC78F]/20 pb-10">
           {/* Logo and Description */}
           <div className="flex flex-col">
-            <Link href="/" className="inline-block mb-4">
+            <Button href="/" className="inline-block mb-4">
               <Image src="/gazasoup-logo.webp" alt="Gaza Soup Kitchen" width={120} height={120} className="h-auto" />
-            </Link>
+            </Button>
             <p className="text-gray-600 mt-2 text-sm max-w-md">
               Providing hot meals and essential support to those in need throughout Gaza.
             </p>
@@ -48,13 +48,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h3>
             <div className="grid grid-cols-2 gap-4">
               {NAV_ITEMS.map((item) => (
-                <Link
+                <Button
+                  as="a"
                   key={item.label}
                   href={item.link}
                   className="text-gray-600 hover:text-[#3CC78F] transition-colors duration-300 text-sm"
                 >
                   {item.label}
-                </Link>
+                </Button>
               ))}
             </div>
           </div>
@@ -73,15 +74,15 @@ const Footer = () => {
               { label: SocialIcons.LINKEDIN, href: 'https://www.linkedin.com/company/gaza-soup-kitchen/' },
               { label: SocialIcons.BLUESKY, href: 'https://bsky.app/profile/gazasoupkitchen.bsky.social' },
             ].map((item) => (
-              <Link
-                target="_blank"
+              <Button
+                as="a"
                 key={item.label}
                 href={item.href}
                 className="text-gray-600 transition duration-300"
                 aria-label={item.label}
               >
                 {renderIcon(item.label)}
-              </Link>
+              </Button>
             ))}
           </div>
         </div>
