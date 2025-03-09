@@ -2,15 +2,10 @@ import { getGlobalData } from '@/actions/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
 import { ViewTransitions } from 'next-view-transitions';
-import { Yeseva_One } from 'next/font/google';
+import { yesevaOne } from '@/app/fonts';
 import Navbar from '../components/navbar';
 import './globals.css';
 import Hero from '@/components/hero';
-
-const yesevaOne = Yeseva_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   // const { data } = await getGlobalData();

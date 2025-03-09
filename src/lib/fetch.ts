@@ -13,8 +13,7 @@ export async function fetchData(url: string) {
 
     if (!response.ok) return [];
 
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('Error fetching data:', error);
     return [];

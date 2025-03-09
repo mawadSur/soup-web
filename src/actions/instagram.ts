@@ -3,17 +3,14 @@
 import { getImagePosts, processImagePost } from '@/lib/instagram/services/media-service';
 import { InstagramPost } from '@/types';
 
-export async function getInstagramFeed(limit?: number, next?: string): Promise<InstagramPost> {
+export async function getInstagramFeed(): Promise<InstagramPost> {
   try {
-    const { data, paging } = await getImagePosts(limit, next);
+    const { data } = await getImagePosts();
     const posts = await Promise.all(data.map(processImagePost));
 
-    return {
-      posts: posts.flat(),
-      next: paging.next || null,
-    };
+    return { posts: posts.flat() };
   } catch (error) {
     console.error(error);
-    return { posts: [], next: null };
+    return { posts: [] };
   }
 }
