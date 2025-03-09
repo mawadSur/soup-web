@@ -6,8 +6,8 @@ type ColumnLayoutProps = {
   imageAlt: string;
   title: string;
   description: string;
-  buttonText: string;
-  buttonLink: string;
+  buttonText?: string;
+  buttonLink?: string;
   imagePosition: 'left' | 'right';
 };
 
@@ -44,14 +44,16 @@ export function ColumnLayout({
               <p className="text-gray-800 mt-4 sm:mt-5 mb-4 sm:mb-5 text-sm sm:text-base md:text-xl md:font-bold lg:font-normal font-sans leading-6 sm:leading-7 md:leading-8">
                 {description}
               </p>
-              <Button
-                as="a"
-                href={buttonLink}
-                target={buttonLink !== '/about' ? '_blank' : undefined}
-                className="inline-block bg-[#2A8C61] text-white py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
-              >
-                {buttonText}
-              </Button>
+              {buttonText && buttonLink && (
+                <Button
+                  as="a"
+                  href={buttonLink}
+                  target={buttonLink !== '/about' ? '_blank' : undefined}
+                  className="inline-block bg-[#2A8C61] text-white py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
+                >
+                  {buttonText}
+                </Button>
+              )}
             </div>
           </div>
         </div>
