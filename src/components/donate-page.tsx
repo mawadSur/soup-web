@@ -20,8 +20,8 @@ const donationMethods = [
       bank: 'PNC BANK N.A.',
       address: '1913 Massachusetts Avenue NW, Washington DC 20036',
       phone: '202-835-5531',
-      routing: '021052053',
-      account: '39983526',
+      routing: '#021052053',
+      account: '#39983526',
     },
     buttonText: 'View Bank Details',
   },
@@ -53,8 +53,8 @@ const DonatePage = () => {
   return (
     <section className="py-16 lg:py-24 font-sans">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 auto-rows-min">
-          <div className="col-span-1 md:col-span-2 xl:col-span-3 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6 auto-rows-min">
+          <div className="col-span-1 xl:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
             <div className="p-8 space-y-4 text-center">
               <div className="flex justify-center mb-6">
                 <div className="p-3 rounded-full bg-white/10 shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:bg-white/20">
@@ -76,7 +76,31 @@ const DonatePage = () => {
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-2 xl:col-span-1 xl:row-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+          <div className="col-span-1 xl:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+            <div className="p-6 sm:p-8 h-full transition-all duration-300 group-hover:bg-opacity-90">
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="p-3 rounded-full bg-white/10 shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:bg-white/20">
+                    {donationMethods[0].icon}
+                  </div>
+                  <h2 className="text-2xl sm:text-2xl font-bold text-gray-800 transition-all duration-300 group-hover:text-gray-900">
+                    {donationMethods[0].title}
+                  </h2>
+                </div>
+                <p className="text-base sm:text-lg font-medium text-gray-600 mb-8 leading-relaxed transition-all duration-300 group-hover:text-gray-800">
+                  {donationMethods[0].description}
+                </p>
+                <button
+                  onClick={() => window.open(donationMethods[0].link, '_blank')}
+                  className="mt-auto w-full bg-gray-800 text-white font-bold py-3 sm:py-4 px-6 rounded-xl transition-all duration-300 transform hover:bg-gray-900 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                >
+                  {donationMethods[0].buttonText}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2 xl:col-span-2 xl:row-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
             <div className="p-6 sm:p-8 h-full transition-all duration-300 group-hover:bg-opacity-90">
               <div className="relative flex flex-col h-full">
                 <div className="flex items-center space-x-4 mb-6">
@@ -120,31 +144,7 @@ const DonatePage = () => {
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-1 xl:col-span-1 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-            <div className="p-6 sm:p-8 h-full transition-all duration-300 group-hover:bg-opacity-90">
-              <div className="relative flex flex-col h-full">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-3 rounded-full bg-white/10 shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:bg-white/20">
-                    {donationMethods[0].icon}
-                  </div>
-                  <h2 className="text-2xl sm:text-2xl font-bold text-gray-800 transition-all duration-300 group-hover:text-gray-900">
-                    {donationMethods[0].title}
-                  </h2>
-                </div>
-                <p className="text-base sm:text-lg font-medium text-gray-600 mb-8 leading-relaxed transition-all duration-300 group-hover:text-gray-800">
-                  {donationMethods[0].description}
-                </p>
-                <button
-                  onClick={() => window.open(donationMethods[0].link, '_blank')}
-                  className="mt-auto w-full bg-gray-800 text-white font-bold py-3 sm:py-4 px-6 rounded-xl transition-all duration-300 transform hover:bg-gray-900 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                >
-                  {donationMethods[0].buttonText}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-span-1 md:col-span-1 xl:col-span-1 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+          <div className="col-span-1 xl:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
             <div className="p-6 sm:p-8 h-full transition-all duration-300 group-hover:bg-opacity-90">
               <div className="relative flex flex-col h-full">
                 <div className="flex items-center space-x-4 mb-6">
@@ -168,7 +168,7 @@ const DonatePage = () => {
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-2 xl:col-span-1 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+          <div className="col-span-1 xl:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
             <div className="p-6 sm:p-8 h-full transition-all duration-300 group-hover:bg-opacity-90">
               <div className="relative flex flex-col h-full">
                 <div className="flex items-center space-x-4 mb-6">

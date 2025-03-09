@@ -74,9 +74,9 @@ export default function NavbarComponent() {
     <header className="fixed top-0 left-0 right-0 w-full z-20">
       <div
         id="sticky-header"
-        className={cn('absolute bg-[rgb(60,199,143)] transition-all duration-500 ease-in-out rounded-lg py-4 px-9', {
+        className={cn('absolute bg-[rgb(60,199,143)] transition-all duration-500 ease-in-out py-4 px-9', {
           'left-0 right-0 top-0': isScrolled,
-          'left-1 right-1 top-1 sm:left-2 sm:right-2 sm:top-2 md:left-4 md:right-4 md:top-3 lg:left-24 lg:right-24 lg:top-16':
+          'rounded-lg left-1 right-1 top-1 sm:left-2 sm:right-2 sm:top-2 md:left-4 md:right-4 md:top-3 lg:left-24 lg:right-24 lg:top-16':
             !isScrolled,
         })}
       >
