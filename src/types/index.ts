@@ -133,12 +133,10 @@ export interface InstagramItem {
   media_type: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM';
   media_url: string;
   thumbnail_url?: string;
-  placeholder?: string;
 }
 
 export type InstagramPost = {
   posts: InstagramItem[];
-  next: string | null;
 };
 
 export enum IconType {

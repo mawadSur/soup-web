@@ -30,11 +30,11 @@ function renderIcon(text: string) {
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-white to-[rgba(60,199,143,0.15)] relative">
-      <div className="mx-auto w-full max-w-6xl px-6 pt-12 pb-6">
+      <div className="container mx-auto px-4 pb-6">
         {/* Top Section with Logo and Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 border-b border-[#3CC78F]/20 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 border-b border-[#3CC78F]/20 pb-10">
           {/* Logo and Description */}
-          <div className="flex flex-col">
+          <div className="col-span-2 flex flex-col">
             <Button href="/" className="inline-block mb-4">
               <Image src="/gazasoup-logo.webp" alt="Gaza Soup Kitchen" width={120} height={120} className="h-auto" />
             </Button>

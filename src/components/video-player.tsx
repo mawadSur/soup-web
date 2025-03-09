@@ -41,7 +41,7 @@ export const VideoPlayer = ({
         }}
       >
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white bg-opacity-80 shadow-lg">
-          <IoMdPlay size={32} className="text-primary translate-x-0.5" />
+          <IoMdPlay size={32} className="translate-x-0.5" />
         </div>
       </div>
       {isPlaying && (

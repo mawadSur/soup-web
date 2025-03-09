@@ -1,4 +1,4 @@
-import { BLUR_DATA_URL, MEDIAS_PAGE } from '@/constant';
+import { MEDIAS_PAGE } from '@/constant';
 import Image from 'next/image';
 import { Button } from './button';
 
@@ -20,8 +20,6 @@ export default function MediaPage() {
                   height={item.height}
                   className="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:-translate-y-2"
                   loading="lazy"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
               </Button>
             </div>
