@@ -1,4 +1,4 @@
-import { getGlobalData } from '@/actions/strapi';
+// import { getGlobalData } from '@/actions/strapi';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
 import { ViewTransitions } from 'next-view-transitions';

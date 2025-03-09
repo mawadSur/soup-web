@@ -1,10 +1,10 @@
-import { getDynamicPage } from '@/actions/strapi';
+// import { getDynamicPage } from '@/actions/strapi';
 import AboutPage from '@/components/about-page';
 import DonatePage from '@/components/donate-page';
 import { GalleryPage } from '@/components/gallery-page';
 import MediaPage from '@/components/media-page';
-import { SectionRenderer } from '@/components/section-renderer';
-import { SectionData } from '@/types';
+// import { SectionRenderer } from '@/components/section-renderer';
+// import { SectionData } from '@/types';
 
 export async function generateStaticParams() {
   return [{ slug: '/' }, { slug: 'about' }, { slug: 'gallery' }, { slug: 'media' }, { slug: 'donation' }];
@@ -29,15 +29,15 @@ export default async function Dynamic({ params }: { params: Promise<{ slug: stri
     return <AboutPage />;
   }
 
-  const { data } = await getDynamicPage(slug);
+  // const { data } = await getDynamicPage(slug);
 
-  if (!data) return null;
+  // if (!data) return null;
 
   return (
     <>
-      {data.sections.map((section: SectionData) => (
+      {/* {data.sections.map((section: SectionData) => (
         <SectionRenderer key={section.__component} section={section} />
-      ))}
+      ))} */}
     </>
   );
 }
