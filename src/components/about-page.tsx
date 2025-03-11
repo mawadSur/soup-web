@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { DONATION_URL } from '../constant';
 import { ColumnLayout } from './column-layout';
+import { Button } from './button';
 
 export default function AboutPage() {
   return (
@@ -166,35 +167,18 @@ export default function AboutPage() {
                   Your <strong className="text-[#3CC78F] text-xl">$5, $10, $50</strong> will go a long way with this
                   initiative. We also need you to pray for their safety as they do this heroic work.
                 </p>
-
-                <motion.div
-                  className="mt-6 pl-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
+                <Button
+                  as="a"
+                  href={DONATION_URL}
+                  target="_blank"
+                  className="relative inline-block py-3 px-6 bg-[#2A8C61] text-white font-sans font-semibold text-base sm:text-lg no-underline rounded-lg overflow-hidden animate-donation-pulse"
                 >
-                  <motion.a
-                    href={DONATION_URL}
-                    className="inline-block bg-[#2A8C61] py-3 px-8 rounded-lg font-semibold relative overflow-hidden group shadow-lg"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="relative text-white font-bold text-lg tracking-wide drop-shadow-md">
-                      Support Our Efforts
-                    </span>
-                    <motion.div
-                      className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                      initial={{ x: '-100%' }}
-                      animate={{ x: '100%' }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatDelay: 2,
-                      }}
-                    />
-                  </motion.a>
-                </motion.div>
+                  Support Our Efforts
+                  <div
+                    className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
+                    style={{ transform: 'skewX(-20deg)' }}
+                  />
+                </Button>
               </div>
             </motion.div>
 
@@ -258,6 +242,35 @@ export default function AboutPage() {
                   <p className="text-white text-sm">
                     Our community kitchen now serves up to 3,000 meals daily to families in need
                   </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="relative group rounded-lg overflow-hidden shadow-xl"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="absolute inset-0 bg-[#3CC78F] mix-blend-multiply opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                <motion.div
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2 }}
+                  className="overflow-hidden"
+                >
+                  <Image
+                    src="/expansion-and-live-saving-3.webp"
+                    alt="Gaza Soup Kitchen Expansion"
+                    width={640}
+                    height={360}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                </motion.div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-sm">Meals are prepared and distributed by our team of volunteers</p>
                 </div>
               </motion.div>
             </motion.div>

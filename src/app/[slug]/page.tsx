@@ -6,6 +6,16 @@ import MediaPage from '@/components/media-page';
 // import { SectionRenderer } from '@/components/section-renderer';
 // import { SectionData } from '@/types';
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  const capitalizedSlug = slug.charAt(0).toUpperCase() + slug.slice(1);
+
+  return {
+    title: capitalizedSlug,
+  };
+}
+
 export async function generateStaticParams() {
   return [{ slug: 'about' }, { slug: 'gallery' }, { slug: 'media' }, { slug: 'donation' }];
 }

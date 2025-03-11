@@ -49,9 +49,13 @@ export function ColumnLayout({
                   as="a"
                   href={buttonLink}
                   target={buttonLink !== '/about' ? '_blank' : undefined}
-                  className="inline-block bg-[#2A8C61] text-white py-2 sm:py-[13px] px-6 sm:px-[44px] text-base sm:text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-white hover:text-[#333333] hover:shadow-lg cursor-pointer"
+                  className="relative inline-block py-3 px-6 bg-[#2A8C61] text-white font-sans font-semibold text-base sm:text-lg no-underline rounded-lg overflow-hidden animate-donation-pulse"
                 >
                   {buttonText}
+                  <div
+                    className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
+                    style={{ transform: 'skewX(-20deg)' }}
+                  />
                 </Button>
               )}
             </div>

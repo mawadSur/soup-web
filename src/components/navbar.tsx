@@ -74,7 +74,7 @@ export default function NavbarComponent() {
     <header className="fixed top-0 left-0 right-0 w-full z-20">
       <div
         id="sticky-header"
-        className={cn('absolute bg-[rgb(60,199,143)] transition-all duration-500 ease-in-out py-4 px-9', {
+        className={cn('absolute bg-[#3CC78F] transition-all duration-500 ease-in-out py-4 px-9', {
           'left-0 right-0 top-0': isScrolled,
           'rounded-lg left-1 right-1 top-1 sm:left-2 sm:right-2 sm:top-2 md:left-4 md:right-4 md:top-3 lg:left-24 lg:right-24 lg:top-16':
             !isScrolled,
@@ -111,9 +111,13 @@ export default function NavbarComponent() {
                 as="a"
                 href={DONATION_URL}
                 target="_blank"
-                className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
+                className="relative inline-block py-3 px-6 bg-white text-gray-800 font-sans font-semibold text-base no-underline rounded-lg overflow-hidden animate-donation-pulse"
               >
                 Make a Donation
+                <div
+                  className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
+                  style={{ transform: 'skewX(-20deg)' }}
+                />
               </Button>
             </div>
 
@@ -159,7 +163,7 @@ export default function NavbarComponent() {
                 initial="closed"
                 animate="open"
                 exit="exit"
-                className="lg:hidden overflow-hidden"
+                className="lg:hidden overflow-hidden px-4" // Added px-4 for horizontal padding
               >
                 <ul className="flex flex-col space-y-4 text-gray-800 text-lg mt-4 pb-4">
                   {NAV_ITEMS.map((item) => (
@@ -178,9 +182,13 @@ export default function NavbarComponent() {
                       as="a"
                       href={DONATION_URL}
                       target="_blank"
-                      className="bg-white text-black font-semibold font-sans py-2 px-4 rounded hover:text-green-700 transition duration-300 ease-in-out"
+                      className="relative inline-block py-3 px-6 bg-white text-gray-800 font-sans font-semibold text-base no-underline rounded-lg overflow-hidden animate-donation-pulse"
                     >
                       Make a Donation
+                      <div
+                        className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
+                        style={{ transform: 'skewX(-20deg)' }}
+                      />
                     </Button>
                   </motion.li>
                 </ul>

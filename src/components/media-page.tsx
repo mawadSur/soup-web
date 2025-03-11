@@ -12,7 +12,7 @@ export default function MediaPage() {
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 p-4">
           {MEDIAS_PAGE.map((item) => (
             <div key={item.name} className="break-inside-avoid mb-4 relative group">
-              <Button href={item.href} as="a">
+              <Button href={item.href} as="a" target="_blank">
                 <Image
                   src={'/media/' + item.name}
                   alt={item.alternativeText}
