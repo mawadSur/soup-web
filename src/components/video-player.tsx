@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { IoMdPause, IoMdPlay, IoMdVolumeHigh, IoMdVolumeOff } from 'react-icons/io';
 
 export const VideoPlayer = ({
@@ -18,8 +18,21 @@ export const VideoPlayer = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    if (isPlaying) {
+      videoElement.play().catch((err) => {
+        onPlayPause();
+      });
+    } else {
+      videoElement.pause();
+    }
+  }, [isPlaying]);
+
   return (
-    <div className="relative overflow-hidden rounded-lg w-full h-[400px]">
+    <div className="relative overflow-hidden rounded-lg w-full">
       <video
         ref={videoRef}
         src={item.media_url}
@@ -36,8 +49,6 @@ export const VideoPlayer = ({
         })}
         onClick={() => {
           onPlayPause();
-          const video = videoRef.current;
-          if (video) isPlaying ? video.pause() : video.play().catch((err) => console.error('Failed to play:', err));
         }}
       >
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white bg-opacity-80 shadow-lg">
@@ -50,7 +61,6 @@ export const VideoPlayer = ({
             <button
               onClick={() => {
                 onPlayPause();
-                videoRef.current?.pause();
               }}
               className="text-white p-2 rounded-full hover:bg-black/20"
             >

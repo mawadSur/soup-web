@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { Button } from './button';
+import WaveText from './wave-text';
 
 export default function Hero() {
   // { data }: { data: SectionTopHero }
@@ -19,7 +20,7 @@ export default function Hero() {
         <div className={cn({ 'text-center': slug })}>
           {slug ? (
             <h3 className="capitalize text-white font-bold font-sans text-6xl sm:text-7xl md:text-8xl lg:text-9xl mt-2 mb-3 leading-tight drop-shadow-xl">
-              {slug}
+              <WaveText text={slug as string} />
             </h3>
           ) : (
             <div className="text-white">
@@ -36,9 +37,13 @@ export default function Hero() {
                 as="a"
                 href={DONATION_URL}
                 target="_blank"
-                className="inline-block bg-white text-[#222222] py-[13px] px-[44px] text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-gray-200 hover:shadow-lg hover:scale-105 cursor-pointer"
+                className="relative animate-donation-pulse overflow-hidden inline-block bg-white text-[#222222] py-[13px] px-[44px] text-lg font-semibold font-sans rounded-[5px] text-center capitalize transition-all duration-300 hover:bg-gray-200 hover:shadow-lg hover:scale-105 cursor-pointer"
               >
                 Make a Donation
+                <div
+                  className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
+                  style={{ transform: 'skewX(-20deg)' }}
+                />
               </Button>
             </div>
           )}

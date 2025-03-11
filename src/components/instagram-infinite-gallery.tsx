@@ -2,54 +2,100 @@
 import { InstagramItem } from '@/types';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
+import { GoDeviceCameraVideo } from 'react-icons/go';
 import { VideoPlayer } from './video-player';
 
 export default function InstagramInfiniteGallery({ posts }: { posts: InstagramItem[] }) {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
   const [mutedVideos, setMutedVideos] = useState<Record<string, boolean>>({});
+  const [selectedItem, setSelectedItem] = useState<InstagramItem | null>(null);
 
   const handleVideoPlay = useCallback((id: string) => {
     setPlayingVideo((prev) => (prev === id ? null : id));
   }, []);
 
   const toggleMute = useCallback((id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setMutedVideos((prev) => {
-      const isMuted = prev[id] ?? true;
-      const newMutedState = !isMuted;
-      return { ...prev, [id]: newMutedState };
-    });
+    setMutedVideos((prev) => ({ ...prev, [id]: !(prev[id] ?? true) }));
   }, []);
 
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
-      {posts.map((item) => {
-        const isVideo = item.media_type === 'VIDEO' || item.media_url?.includes('.mp4');
-        const isPlaying = playingVideo === item.id;
-        const isMuted = mutedVideos[item.id] ?? true;
+  const openModal = useCallback(
+    (item: InstagramItem) => {
+      setSelectedItem(item);
+      if (item.media_type === 'VIDEO' || item.media_url?.includes('.mp4')) {
+        handleVideoPlay(item.id);
+      }
+    },
+    [handleVideoPlay],
+  );
 
-        return (
-          <div key={item.id} className="relative overflow-hidden rounded-lg w-full h-[400px]">
-            {isVideo ? (
-              <VideoPlayer
-                item={item}
-                isPlaying={isPlaying}
-                isMuted={isMuted}
-                onPlayPause={() => handleVideoPlay(item.id)}
-                onToggleMute={(e) => toggleMute(item.id, e)}
-              />
-            ) : (
-              <Image
-                src={item.media_url}
-                alt={item.id}
-                fill
-                className="object-cover transition duration-300 ease-in-out hover:scale-110"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+  const closeModal = useCallback(() => {
+    setPlayingVideo(null);
+    setSelectedItem(null);
+  }, []);
+
+  const isVideo = useCallback(
+    (item: InstagramItem) => item.media_type === 'VIDEO' || item.media_url?.includes('.mp4'),
+    [],
+  );
+
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+        {posts.map((item) => (
+          <div
+            key={item.id}
+            className="relative overflow-hidden rounded-lg w-full h-[400px] cursor-pointer group"
+            onClick={() => openModal(item)}
+          >
+            <Image
+              src={isVideo(item) ? item.thumbnail_url || item.media_url : item.media_url}
+              alt={item.id}
+              fill
+              className="object-cover transition duration-300 ease-in-out hover:scale-110"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            {isVideo(item) && (
+              <div className="absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-2">
+                <GoDeviceCameraVideo className="h-6 w-6 text-white" />
+              </div>
             )}
           </div>
-        );
-      })}
-    </div>
+        ))}
+      </div>
+
+      {selectedItem && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-4xl w-full rounded-xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {isVideo(selectedItem) ? (
+              <div className="w-full aspect-video">
+                <VideoPlayer
+                  item={selectedItem}
+                  isPlaying={playingVideo === selectedItem.id}
+                  isMuted={mutedVideos[selectedItem.id] ?? true}
+                  onPlayPause={() => handleVideoPlay(selectedItem.id)}
+                  onToggleMute={(e) => toggleMute(selectedItem.id, e)}
+                />
+              </div>
+            ) : (
+              <div className="relative w-full h-[90vh]">
+                <Image
+                  src={selectedItem.media_url}
+                  alt={selectedItem.id}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
