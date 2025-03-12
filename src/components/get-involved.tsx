@@ -8,10 +8,10 @@ const CARDS = [
   {
     id: 1,
     title: 'Served Meals',
-    image: '/help/2.png',
+    image: '/help/2.jpg',
     alt: 'Served meals',
     number: '500000',
-    description: 'Children in 190 countries in the world',
+    description: 'Serving fresh hot meals everyday',
   },
   {
     id: 2,
@@ -49,8 +49,8 @@ export default function GetInvolved() {
                   src={card.image}
                   alt={card.alt}
                   width={400}
-                  height={300}
-                  className="w-full h-auto rounded-[9px] transition-transform duration-300 transform hover:scale-105"
+                  height={400}
+                  className="w-full h-96 object-cover rounded-[9px] transition-transform duration-300 transform hover:scale-105" // Taller height
                 />
               </div>
             </div>
