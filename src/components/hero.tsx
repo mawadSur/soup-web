@@ -13,7 +13,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-[742px] flex items-center mt-24 sm:mt-30 md:mt-36 lg:mt-32">
       <Image src="/hero.jpg" alt="Children in need" fill style={{ objectFit: 'cover' }} quality={75} priority />
-      <div className="absolute inset-0 bg-[#3CC78F] opacity-50 mix-blend-multiply"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
         <div className={cn({ 'text-center': slug })}>
