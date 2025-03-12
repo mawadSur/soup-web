@@ -23,14 +23,17 @@ export default function Hero() {
             </h3>
           ) : (
             <div className="text-white">
-              <span className="capitalize text-4xl md:text-5xl text-white font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse-slow">
-                Get Started Today.
-              </span>
-              <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-3 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-                Help the Children When They Need
+              <p className="capitalize text-3xl md:text-4xl lg:text-5xl text-white font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse-slow tracking-wide">
+                Through every hardship,
+              </p>
+              <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-3 mb-4 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-tight">
+                Our pots keep boiling,
               </h3>
-              <p className="mt-2 mb-6 sm:mb-10 text-white text-lg sm:text-xl md:text-2xl font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-3xl">
-                With so much to consume and such little time, coming up with relevant title ideas is essential
+              <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-3 mb-4 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-tight">
+                Our doors stay open,
+              </h3>
+              <p className="mt-3 mb-8 sm:mb-12 text-3xl md:text-4xl lg:text-5xl text-white font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse-slow max-w-3xl tracking-wide">
+                and our meals bring hope to those who need it most.
               </p>
               <Button
                 as="a"
