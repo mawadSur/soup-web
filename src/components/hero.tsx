@@ -13,24 +13,23 @@ export default function Hero() {
   return (
     <section className="relative min-h-[742px] flex items-center mt-24 sm:mt-30 md:mt-36 lg:mt-32">
       <Image src="/hero.jpg" alt="Children in need" fill style={{ objectFit: 'cover' }} quality={75} priority />
-      {/* Overlay */}
       <div className="absolute inset-0 bg-[#3CC78F] opacity-50 mix-blend-multiply"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
         <div className={cn({ 'text-center': slug })}>
           {slug ? (
-            <h3 className="capitalize text-white font-bold font-sans text-6xl sm:text-7xl md:text-8xl lg:text-9xl mt-2 mb-3 leading-tight drop-shadow-xl">
+            <h3 className="capitalize text-white font-bold font-sans text-6xl sm:text-7xl md:text-8xl lg:text-9xl mt-2 mb-3 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
               <WaveText text={slug as string} />
             </h3>
           ) : (
             <div className="text-white">
-              <span className="capitalize text-4xl md:text-5xl text-white font-semibold font-sans drop-shadow-lg animate-pulse-slow">
+              <span className="capitalize text-4xl md:text-5xl text-white font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse-slow">
                 Get Started Today.
               </span>
-              <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-3 leading-tight drop-shadow-xl">
+              <h3 className="text-white font-bold font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-3 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                 Help the Children When They Need
               </h3>
-              <p className="mt-2 mb-6 sm:mb-10 text-white text-lg sm:text-xl md:text-2xl font-semibold font-sans drop-shadow-md max-w-3xl">
+              <p className="mt-2 mb-6 sm:mb-10 text-white text-lg sm:text-xl md:text-2xl font-semibold font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-3xl">
                 With so much to consume and such little time, coming up with relevant title ideas is essential
               </p>
               <Button
