@@ -1,5 +1,6 @@
 // import { getDynamicPage } from '@/actions/strapi';
 import AboutPage from '@/components/about-page';
+import ContactPage from '@/components/contact-page';
 import DonatePage from '@/components/donate-page';
 import { GalleryPage } from '@/components/gallery-page';
 import MediaPage from '@/components/media-page';
@@ -37,6 +38,10 @@ export default async function Dynamic({ params }: { params: Promise<{ slug: stri
 
   if (slug === 'about') {
     return <AboutPage />;
+  }
+
+  if (slug === 'contact') {
+    return <ContactPage />;
   }
 
   // const { data } = await getDynamicPage(slug);

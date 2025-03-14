@@ -1,5 +1,5 @@
 'use client';
-import { DONATION_URL } from '@/constant';
+import { DONATION_URL, NAV_ITEMS } from '@/constant';
 import { useOutsideClick } from '@/hooks/use-outside';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -8,14 +8,6 @@ import { useEffect, useRef, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Button } from './button';
-
-const NAV_ITEMS = [
-  { label: 'Home', link: '/' },
-  { label: 'About', link: '/about' },
-  { label: 'Gallery', link: '/gallery' },
-  { label: 'Media', link: '/media' },
-  { label: 'Donation', link: '/donation' },
-];
 
 const menuVariants = {
   closed: { opacity: 0, height: 0, transformOrigin: 'top center' },
@@ -113,7 +105,7 @@ export default function NavbarComponent() {
                 target="_blank"
                 className="relative inline-block py-3 px-6 bg-white text-gray-800 font-sans font-semibold text-base no-underline rounded-lg overflow-hidden animate-donation-pulse"
               >
-                Make a Donation
+                Donate
                 <div
                   className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
                   style={{ transform: 'skewX(-20deg)' }}
@@ -163,7 +155,7 @@ export default function NavbarComponent() {
                 initial="closed"
                 animate="open"
                 exit="exit"
-                className="lg:hidden overflow-hidden px-4" // Added px-4 for horizontal padding
+                className="lg:hidden overflow-hidden px-4"
               >
                 <ul className="flex flex-col space-y-4 text-gray-800 text-lg mt-4 pb-4">
                   {NAV_ITEMS.map((item) => (
@@ -184,7 +176,7 @@ export default function NavbarComponent() {
                       target="_blank"
                       className="relative inline-block py-3 px-6 bg-white text-gray-800 font-sans font-semibold text-base no-underline rounded-lg overflow-hidden animate-donation-pulse"
                     >
-                      Make a Donation
+                      Donate
                       <div
                         className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent animate-donation-shine"
                         style={{ transform: 'skewX(-20deg)' }}

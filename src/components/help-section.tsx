@@ -9,7 +9,7 @@ const CARDS = [
   {
     id: 1,
     title: 'A RECIPE FOR RESILIENCE',
-    image: '/help-1.webp',
+    image: '/help-1.jpg',
     alt: 'Served meals',
     description:
       "This isn't just a soup — it's a recipe for resilience, simmering on the stoves of Gaza, feeding bodies and souls alike. Each bowl serves not just sustenance but a steadfast vow: to fortify, to nourish, to endure.",
@@ -17,7 +17,7 @@ const CARDS = [
   {
     id: 2,
     title: 'HANDS UNITED IN SERVICE',
-    image: '/help-2.webp',
+    image: '/help-2.jpg',
     alt: 'Donation',
     description:
       'Amidst the steam of hearty soups, we find the warmth of shared hope. Every ladleful carries the spirit of community and the promise of sustenance for the children of Gaza.',

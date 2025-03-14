@@ -1,12 +1,12 @@
 import About from '@/components/about';
 import Gallery from '@/components/gallery';
-import GalleryMasonrySection from '@/components/media-page';
 import GetInvolved from '@/components/get-involved';
 import HelpSection from '@/components/help-section';
 import Hero from '@/components/hero';
-import Mission from '@/components/mission';
 import Media from '@/components/media';
+import GalleryMasonrySection from '@/components/media-page';
 import MerchSection from '@/components/merch-section';
+import Mission from '@/components/mission';
 import { IconType, SectionType } from '@/types';
 import { LiaHandHoldingUsdSolid, LiaHandshakeSolid } from 'react-icons/lia';
 import { PiHandHeart } from 'react-icons/pi';
@@ -32,32 +32,13 @@ export const COMPONENT_MAP = {
   [SectionType.GALLERY]: Gallery,
 };
 
-export const GALLERIES_PAGE = [
-  { src: '/bg_3.jpg', width: 1920, height: 1080, alt: 'Background scene' },
-  { src: '/bg_4.jpg', width: 1920, height: 1080, alt: 'Alternative background' },
-  { src: '/cause-2.jpg', width: 1200, height: 800, alt: 'Charitable cause' },
-  { src: '/cause-3.jpg', width: 1200, height: 800, alt: 'Community support initiative' },
-  { src: '/cause-4.jpg', width: 1200, height: 800, alt: 'Humanitarian effort' },
-  { src: '/cause-5.jpg', width: 1200, height: 800, alt: 'Social impact project' },
-  { src: '/cause-6.jpg', width: 1200, height: 800, alt: 'Volunteer work' },
-  { src: '/food.webp', width: 1000, height: 667, alt: 'Food distribution' },
-  { src: '/food1.webp', width: 1000, height: 667, alt: 'Meal preparation' },
-  { src: '/food2.webp', width: 1000, height: 667, alt: 'Cooking for community' },
-  { src: '/food3.webp', width: 1000, height: 667, alt: 'Community kitchen' },
-  { src: '/food4.webp', width: 1000, height: 667, alt: 'Feeding program' },
-  { src: '/gaza-kid.webp', width: 800, height: 600, alt: 'Child in Gaza' },
-  { src: '/gaza-kids.webp', width: 800, height: 600, alt: 'Children in Gaza' },
-  { src: '/Gaza-Soup-Kitchen-2.webp', width: 1200, height: 800, alt: 'Soup kitchen scene' },
-  { src: '/Gaza-Soup-Kitchen-3.webp', width: 1200, height: 800, alt: 'Community soup kitchen' },
-  { src: '/Gaza-Soup-Kitchen.webp', width: 1200, height: 800, alt: 'Humanitarian soup kitchen' },
-  { src: '/gazasoup-logo.webp', width: 500, height: 500, alt: 'Gazasoup organization logo' },
-  { src: '/image_1.jpg', width: 1600, height: 1067, alt: 'Descriptive image one' },
-  { src: '/image_2.jpg', width: 1600, height: 1067, alt: 'Descriptive image two' },
-  { src: '/image_3.jpg', width: 1600, height: 1067, alt: 'Descriptive image three' },
-  { src: '/mission-1024x864.webp', width: 800, height: 600, alt: 'Child portrait' },
-  { src: '/kids.webp', width: 800, height: 600, alt: 'Group of children' },
-  { src: '/MAHMOUD-ALMADHOUN.webp', width: 800, height: 600, alt: 'Mahmoud Almadhoun' },
-  { src: '/merch.webp', width: 1000, height: 1000, alt: 'Merchandise display' },
+export const NAV_ITEMS = [
+  { label: 'Home', link: '/' },
+  { label: 'About', link: '/about' },
+  { label: 'Gallery', link: '/gallery' },
+  { label: 'Media', link: '/media' },
+  { label: 'Donation', link: '/donation' },
+  { label: 'Contact', link: '/contact' },
 ];
 
 export const MEDIAS_PAGE = [
