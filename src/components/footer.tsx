@@ -3,14 +3,7 @@ import Image from 'next/image';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky, FaSquareFacebook } from 'react-icons/fa6';
 import { Button } from './button';
-
-const NAV_ITEMS = [
-  { label: 'Home', link: '/' },
-  { label: 'About', link: '/about' },
-  { label: 'Gallery', link: '/gallery' },
-  { label: 'Media', link: '/media' },
-  { label: 'Donation', link: '/donation' },
-];
+import { NAV_ITEMS } from '@/constant';
 
 function renderIcon(text: string) {
   switch (text) {
@@ -69,7 +62,7 @@ const Footer = () => {
 
           <div className="flex items-center space-x-5">
             {[
-              { label: SocialIcons.FACEBOOK, href: 'https://www.facebook.com/alkabeer.alhani' },
+              { label: SocialIcons.FACEBOOK, href: 'https://www.facebook.com/people/Gaza-Soup-Kitchen/61566140846121' },
               { label: SocialIcons.INSTAGRAM, href: 'https://www.instagram.com/gazasoupkitchen' },
               { label: SocialIcons.LINKEDIN, href: 'https://www.linkedin.com/company/gaza-soup-kitchen/' },
               { label: SocialIcons.BLUESKY, href: 'https://bsky.app/profile/gazasoupkitchen.bsky.social' },

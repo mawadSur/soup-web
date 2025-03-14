@@ -16,14 +16,14 @@ const CARDS = [
   {
     id: 2,
     title: 'Donation',
-    image: '/help/1.png',
+    image: '/help/1.jpg',
     alt: 'Donation',
     description: 'Your donation provides essential meals to children in need.',
   },
   {
     id: 3,
     title: 'Be a volunteer',
-    image: '/help/3.png',
+    image: '/help/3.jpg',
     alt: 'Be a volunteer',
     description: 'Even the all-powerful Pointing has no control about the blind texts.',
   },
