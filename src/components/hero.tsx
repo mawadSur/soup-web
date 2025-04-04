@@ -10,9 +10,9 @@ export default function Hero() {
   const { slug } = useParams();
 
   return (
-    <section className="relative min-h-[780px] flex items-center mt-24 sm:mt-30 md:mt-36 lg:mt-32">
+    <section className="relative min-h-[850px] flex items-center mt-24 sm:mt-30 md:mt-36 lg:mt-32">
       <Image
-        src="/hero/hero.jpg"
+        src="/hero/hero.jpeg"
         alt="Children in need"
         className="brightness-75 object-cover"
         fill
